@@ -3,505 +3,584 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proposta de Parceria / Maruan Barakat</title>
+<title>Proposta — Juninho Holding Corp</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@400;500&display=swap');
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --navy: #0D1B2A; --navy-mid: #1A2E42; --navy-light: #253D55;
-    --orange: #E8642A; --orange-light: #F07E48;
-    --cream: #F5F2EB; --cream-dark: #EAE5DB;
-    --white: #FFFFFF; --text-dark: #0D1B2A; --text-muted: #5A7A8A;
-    --gold: #C9952A; --green: #1D7A4A; --green-light: #E6F5EE;
-  }
-  body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; }
-  .page { max-width: 900px; margin: 0 auto; padding: 0 40px 60px; }
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@400;500&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #0D1B2A; --navy-mid: #1A2E42; --navy-light: #253D55;
+  --orange: #E8642A; --cream: #F5F2EB;
+  --white: #FFFFFF; --text-dark: #0D1B2A; --text-muted: #5A7A8A;
+  --gold: #C9952A; --gold-lt: #FFF8E6;
+  --green: #1D7A4A; --green-lt: #E6F5EE;
+  --orange-lt: #FEF0E8; --border: #E0DDD5;
+  --red-lt: #FFF1F1; --red: #C0392B; --red-text: #7A2020;
+}
+body { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text-dark); background: var(--cream); line-height: 1.6; }
+.page { max-width: 940px; margin: 0 auto; padding: 0 40px 60px; }
 
-  .cover {
-    background: var(--navy); min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 80px; position: relative; overflow: hidden;
-  }
-  .cover::before {
-    content: ''; position: absolute; top: 0; right: 0;
-    width: 400px; height: 400px; background: var(--orange);
-    opacity: 0.07; border-radius: 50%; transform: translate(120px, -120px);
-  }
-  .cover-tag {
-    font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 600;
-    letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 32px;
-  }
-  .cover-title {
-    font-family: 'Sora', sans-serif; font-size: 52px; font-weight: 700;
-    color: var(--white); line-height: 1.1; margin-bottom: 24px;
-  }
-  .cover-title span { color: var(--orange); }
-  .cover-sub {
-    font-size: 18px; color: rgba(255,255,255,0.6); max-width: 520px;
-    margin-bottom: 56px; line-height: 1.7;
-  }
-  .cover-author { display: flex; align-items: center; gap: 16px; }
-  .cover-avatar {
-    width: 52px; height: 52px; border-radius: 50%; background: var(--orange);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px; color: white;
-  }
-  .cover-author-info p:first-child { font-family: 'Sora', sans-serif; font-weight: 600; color: var(--white); font-size: 16px; }
-  .cover-author-info p:last-child { color: rgba(255,255,255,0.45); font-size: 13px; }
-  .cover-date { position: absolute; bottom: 40px; right: 80px; font-size: 12px; color: rgba(255,255,255,0.25); letter-spacing: 1px; }
+/* COVER */
+.cover { background: var(--navy); min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 72px; position: relative; overflow: hidden; }
+.cover::before { content: ''; position: absolute; top: -80px; right: -80px; width: 440px; height: 440px; background: var(--orange); opacity: 0.06; border-radius: 50%; }
+.cover::after { content: ''; position: absolute; bottom: -60px; left: -60px; width: 280px; height: 280px; background: var(--orange); opacity: 0.03; border-radius: 50%; }
+.cover-tag { font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 24px; }
+.cover-title { font-family: 'Sora', sans-serif; font-size: 54px; font-weight: 700; color: var(--white); line-height: 1.05; }
+.cover-title .accent { color: var(--orange); }
+.cover-sub { font-size: 17px; color: rgba(255,255,255,0.48); line-height: 1.75; max-width: 500px; margin: 16px 0 52px; }
+.cover-author { display: flex; align-items: center; gap: 14px; }
+.avatar-o { width: 50px; height: 50px; border-radius: 50%; background: var(--orange); display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; color: white; flex-shrink: 0; }
+.cover-name { font-family: 'Sora', sans-serif; font-weight: 600; color: var(--white); font-size: 16px; }
+.cover-role { color: rgba(255,255,255,0.38); font-size: 12.5px; margin-top: 3px; }
 
-  .section { padding: 80px 0 0; max-width: 900px; margin: 0 auto; }
-  .section-number {
-    font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 600;
-    letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 8px;
-  }
-  .section-title {
-    font-family: 'Sora', sans-serif; font-size: 34px; font-weight: 700;
-    color: var(--navy); line-height: 1.15; margin-bottom: 16px;
-  }
-  .section-lead {
-    font-size: 17px; color: var(--text-muted); max-width: 680px;
-    margin-bottom: 40px; line-height: 1.75;
-  }
-  .divider { width: 48px; height: 3px; background: var(--orange); margin: 20px 0 36px; }
+/* SECTIONS */
+.section { padding: 68px 0 0; }
+.sec-tag { font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+.sec-title { font-family: 'Sora', sans-serif; font-size: 30px; font-weight: 700; color: var(--navy); line-height: 1.2; }
+.sec-title-w { font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 700; color: var(--white); line-height: 1.2; }
+.sec-lead { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 32px; max-width: 720px; }
+.sec-lead-w { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 32px; }
+.divider { width: 40px; height: 3px; background: var(--orange); margin: 10px 0 22px; }
 
-  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 12px; }
-  .card { background: var(--white); border-radius: 14px; padding: 28px 24px; border: 1px solid rgba(13,27,42,0.08); }
-  .card-icon {
-    width: 40px; height: 40px; border-radius: 10px; background: #FEF0E8;
-    display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 18px;
-  }
-  .card h3 { font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
-  .card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+.dark-section { background: var(--navy); margin: 68px -40px 0; padding: 68px 40px; }
 
-  .dark-section { background: var(--navy); margin: 80px -40px 0; padding: 80px 40px; }
-  .dark-section .section-title { color: var(--white); }
-  .dark-section .section-lead { color: rgba(255,255,255,0.55); }
-  .dark-section .section-number { color: var(--orange); }
-  .dark-card { background: var(--navy-mid); border-radius: 14px; padding: 28px 24px; border: 1px solid rgba(255,255,255,0.07); }
-  .dark-card h3 { font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
-  .dark-card p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.65; }
+/* CARDS */
+.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.card-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.card { background: var(--white); border-radius: 12px; padding: 24px 22px; border: 0.5px solid var(--border); }
+.card-num { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--orange); margin-bottom: 8px; font-family: 'Sora', sans-serif; }
+.card-title { font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+.card-body { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+.dark-card { background: var(--navy-mid); border-radius: 12px; padding: 24px 22px; border: 0.5px solid rgba(255,255,255,0.07); }
+.dark-card .card-title { color: var(--white); }
+.dark-card .card-body { color: rgba(255,255,255,0.48); }
 
-  .highlight-box {
-    background: #FEF0E8; border-left: 4px solid var(--orange);
-    border-radius: 0 12px 12px 0; padding: 24px 28px; margin: 32px 0;
-  }
-  .highlight-box p { font-size: 15px; color: var(--navy); line-height: 1.7; }
-  .highlight-box strong { color: var(--orange); }
+/* BOXES */
+.orange-box { background: var(--orange-lt); border-left: 4px solid var(--orange); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 22px 0; font-size: 14px; color: var(--navy); line-height: 1.7; }
+.green-box { background: var(--green-lt); border-left: 4px solid var(--green); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 22px 0; }
+.green-box .box-title { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 14px; color: var(--green); margin-bottom: 6px; }
+.green-box .box-body { font-size: 13px; color: #1A5C3A; line-height: 1.65; }
+.gold-box { background: var(--gold-lt); border: 1.5px solid var(--gold); border-radius: 10px; padding: 18px 22px; margin: 22px 0; }
+.gold-box .box-title { font-weight: 700; font-size: 14px; color: #7A5800; margin-bottom: 6px; font-family: 'Sora', sans-serif; }
+.gold-box .box-body { font-size: 13px; color: #8A6510; line-height: 1.65; }
 
-  .alert-box {
-    background: #FFF8E6; border: 1.5px solid var(--gold);
-    border-radius: 12px; padding: 24px 28px; margin: 32px 0;
-    display: flex; gap: 16px; align-items: flex-start;
-  }
-  .alert-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
-  .alert-box h4 { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #7A5800; margin-bottom: 6px; }
-  .alert-box p { font-size: 14px; color: #8A6510; line-height: 1.65; }
+/* HOLDING FLOW */
+.holding-flow { display: flex; align-items: stretch; gap: 0; margin: 32px 0; }
+.flow-node { flex: 1; background: var(--white); border: 0.5px solid var(--border); border-radius: 12px; padding: 24px 16px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+.flow-node.primary { background: var(--navy); border-color: var(--navy); }
+.flow-node.accent-node { background: var(--orange-lt); border: 1.5px solid var(--orange); }
+.flow-icon { font-size: 28px; }
+.flow-lbl { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; color: var(--navy); }
+.flow-node.primary .flow-lbl { color: var(--white); }
+.flow-sub { font-size: 11.5px; color: var(--text-muted); line-height: 1.5; }
+.flow-node.primary .flow-sub { color: rgba(255,255,255,0.45); }
+.flow-arr { width: 44px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--orange); font-size: 22px; font-weight: 700; }
 
-  .green-box { background: var(--green-light); border-left: 4px solid var(--green); border-radius: 0 12px 12px 0; padding: 24px 28px; margin: 32px 0; }
-  .green-box h4 { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: var(--green); margin-bottom: 8px; }
-  .green-box p { font-size: 14px; color: #1A5C3A; line-height: 1.65; }
+/* BIG STATEMENT */
+.statement { background: var(--navy); border-radius: 16px; padding: 44px 52px; margin: 32px 0; text-align: center; }
+.statement p { font-family: 'Sora', sans-serif; font-size: 23px; font-weight: 700; color: var(--white); line-height: 1.45; }
+.statement p .accent { color: var(--orange); }
+.statement .sub { font-size: 14px; color: rgba(255,255,255,0.38); margin-top: 14px; }
 
-  .step-list { display: flex; flex-direction: column; gap: 0; margin: 24px 0; }
-  .step { display: flex; gap: 20px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid rgba(13,27,42,0.07); }
-  .step:last-child { border-bottom: none; }
-  .step-num {
-    width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: white;
-    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14px;
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
-  }
-  .step-content h4 { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: var(--navy); margin-bottom: 6px; }
-  .step-content p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+/* STEPS */
+.step { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 0.5px solid var(--border); }
+.step:last-child { border-bottom: none; }
+.step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--navy); color: white; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-title { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 14.5px; color: var(--navy); margin-bottom: 5px; }
+.step-body { font-size: 13.5px; color: var(--text-muted); line-height: 1.65; }
 
-  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 32px 0; }
-  .compare-bad { background: #FFF1F1; border: 1px solid #F0BEBE; border-radius: 14px; padding: 24px; }
-  .compare-good { background: var(--green-light); border: 2px solid var(--green); border-radius: 14px; padding: 24px; }
-  .compare-label { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
-  .compare-bad .compare-label { color: #C0392B; }
-  .compare-good .compare-label { color: var(--green); }
-  .compare-bad h3 { color: #C0392B; }
-  .compare-good h3 { color: var(--green); }
-  .compare-bad h3, .compare-good h3 { font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 12px; }
-  .compare-item { font-size: 13px; padding: 7px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
-  .compare-bad .compare-item { color: #7A2020; }
-  .compare-good .compare-item { color: #1A5C3A; }
+/* COMPARE */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+.compare-bad { background: var(--red-lt); border: 1px solid #F0BEBE; border-radius: 12px; padding: 20px; }
+.compare-good { background: var(--green-lt); border: 1.5px solid var(--green); border-radius: 12px; padding: 20px; }
+.compare-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; font-family: 'Sora', sans-serif; }
+.compare-bad .compare-label { color: var(--red); }
+.compare-good .compare-label { color: var(--green); }
+.compare-h { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; margin-bottom: 12px; }
+.compare-bad .compare-h { color: var(--red); }
+.compare-good .compare-h { color: var(--green); }
+.compare-item { font-size: 13px; padding: 6px 0; border-bottom: 0.3px solid rgba(0,0,0,0.06); line-height: 1.55; }
+.compare-item:last-child { border-bottom: none; }
+.compare-bad .compare-item { color: var(--red-text); }
+.compare-good .compare-item { color: #1A5C3A; }
 
-  .incentive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 32px 0; }
-  .incentive-card { background: var(--white); border-radius: 14px; padding: 24px 20px; text-align: center; border: 1px solid rgba(13,27,42,0.08); }
-  .incentive-value { font-family: 'Sora', sans-serif; font-size: 32px; font-weight: 700; color: var(--orange); margin-bottom: 6px; }
-  .incentive-label { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+/* STATS */
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 28px 0; }
+.stat-box { background: var(--white); border-radius: 12px; padding: 22px 16px; text-align: center; border: 0.5px solid var(--border); }
+.stat-val { font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 700; color: var(--orange); margin-bottom: 6px; line-height: 1; }
+.stat-lbl { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
 
-  .comp-card { background: var(--navy); border-radius: 16px; padding: 40px; margin: 32px 0; color: white; }
-  .comp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
-  .comp-title { font-family: 'Sora', sans-serif; font-size: 22px; font-weight: 700; color: white; }
-  .comp-badge { background: var(--orange); color: white; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; font-family: 'Sora', sans-serif; }
-  .comp-row { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; gap: 8px; }
-  .comp-row:last-child { border-bottom: none; }
-  .comp-row-label { font-size: 14px; color: rgba(255,255,255,0.55); }
-  .comp-row-value { font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 600; color: var(--white); }
-  .comp-row-value.accent { color: var(--orange); font-size: 22px; }
+/* COMPENSATION */
+.comp-card { background: var(--navy); border-radius: 14px; padding: 36px; margin: 24px 0; }
+.comp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 0.5px solid rgba(255,255,255,0.1); flex-wrap: wrap; gap: 10px; }
+.comp-title { font-family: 'Sora', sans-serif; font-size: 18px; font-weight: 700; color: var(--white); }
+.comp-badge { background: var(--orange); color: white; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; font-family: 'Sora', sans-serif; }
+.comp-row { display: flex; justify-content: space-between; align-items: center; padding: 13px 0; border-bottom: 0.5px solid rgba(255,255,255,0.07); flex-wrap: wrap; gap: 6px; }
+.comp-row:last-child { border-bottom: none; }
+.comp-lbl { font-size: 13px; color: rgba(255,255,255,0.5); }
+.comp-val { font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: var(--white); text-align: right; }
+.comp-val.accent { font-size: 20px; color: var(--orange); }
 
-  .next-steps { background: var(--navy); border-radius: 16px; padding: 40px; margin: 48px 0 0; }
-  .next-steps h3 { font-family: 'Sora', sans-serif; font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-  .next-steps p.sub { color: rgba(255,255,255,0.45); font-size: 14px; margin-bottom: 28px; }
-  .next-item { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .next-item:last-child { border-bottom: none; }
-  .next-check { width: 24px; height: 24px; border-radius: 6px; background: var(--orange); display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; flex-shrink: 0; margin-top: 2px; font-weight: 700; font-family: 'Sora', sans-serif; }
-  .next-text { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.65; }
-  .next-text strong { color: white; font-weight: 500; }
+/* NEXT STEPS */
+.next-band { background: var(--navy); border-radius: 14px; padding: 36px; margin: 28px 0; }
+.next-title { font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+.next-sub { font-size: 13px; color: rgba(255,255,255,0.38); margin-bottom: 24px; }
+.next-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 0.5px solid rgba(255,255,255,0.07); }
+.next-item:last-child { border-bottom: none; }
+.next-check { width: 24px; height: 24px; border-radius: 6px; background: var(--orange); display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; flex-shrink: 0; font-weight: 700; font-family: 'Sora', sans-serif; margin-top: 2px; }
+.next-text { font-size: 13.5px; color: rgba(255,255,255,0.62); line-height: 1.65; }
+.next-text b { color: white; font-weight: 500; }
 
-  .footer { text-align: center; padding: 60px 24px 40px; color: var(--text-muted); font-size: 12px; }
+/* CHICO CARD */
+.chico-card { background: var(--white); border-radius: 12px; padding: 22px; border: 0.5px solid var(--border); display: flex; gap: 16px; align-items: flex-start; margin-top: 28px; }
+.avatar-n { width: 42px; height: 42px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14px; color: white; flex-shrink: 0; }
 
-  @media (max-width: 600px) {
-    .cover { padding: 48px 32px; }
-    .cover-title { font-size: 36px; }
-    .compare-grid { grid-template-columns: 1fr; }
-    .page { padding: 0 20px 60px; }
-    .dark-section { margin: 80px -20px 0; padding: 60px 20px; }
-  }
+/* ORG CHART */
+.org-wrap { margin: 28px 0; background: var(--white); border-radius: 16px; padding: 32px 24px 24px; border: 0.5px solid var(--border); overflow: hidden; }
+.org-title { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); letter-spacing: 2px; margin-bottom: 20px; text-align: center; text-transform: uppercase; }
+
+.footer { text-align: center; padding: 48px 0 32px; font-size: 12px; color: var(--text-muted); border-top: 0.5px solid var(--border); margin-top: 56px; }
+
+@media (max-width: 680px) {
+  .cover { padding: 44px 28px 56px; }
+  .cover-title { font-size: 36px; }
+  .card-grid, .card-grid-3, .compare-grid, .stats-row { grid-template-columns: 1fr; }
+  .page { padding: 0 20px 48px; }
+  .dark-section { margin: 68px -20px 0; padding: 56px 20px; }
+  .holding-flow { flex-direction: column; }
+  .statement { padding: 32px 24px; }
+  .statement p { font-size: 18px; }
+}
 </style>
 </head>
 <body>
 
+<!-- COVER -->
 <div class="cover">
-  <p class="cover-tag">Proposta de Parceria Estratégica: 2026</p>
-  <h1 class="cover-title">Operando o seu<br>negócio nos <span>EUA</span><br>do jeito certo.</h1>
-  <p class="cover-sub">Uma visão clara de como posso ser o braço executivo do seu grupo aqui na Flórida: estruturando, gerindo e expandindo seus investimentos com disciplina e resultado.</p>
+  <div class="cover-tag">Proposta Executiva &middot; Abril 2026</div>
+  <div class="cover-title">
+    Sua plataforma de<br>negocios nos <span class="accent">EUA.</span><br>Estruturada para crescer.
+  </div>
+  <div class="cover-sub">Uma Holding Corp americana que gera negocios, atrai investidores e multiplica o seu capital com estrutura profissional, gestao dedicada e transparencia total.</div>
   <div class="cover-author">
-    <div class="cover-avatar">MB</div>
-    <div class="cover-author-info">
-      <p>Maruan Barakat</p>
-      <p>Operador de Negócios &middot; Cidadão Americano &middot; Central Florida, USA</p>
+    <div class="avatar-o">MB</div>
+    <div>
+      <div class="cover-name">Maruan Barakat</div>
+      <div class="cover-role">COO Proposto &middot; Cidadao Americano &middot; Central Florida, USA</div>
     </div>
   </div>
-  <p class="cover-date">Abril 2026</p>
 </div>
 
 <div class="page">
 
+<!-- A GRANDE IDEIA -->
 <div class="section">
-  <p class="section-number">01 &middot; Meu Valor</p>
-  <h2 class="section-title">O que eu trago que ninguém contrata no mercado por este preço</h2>
+  <div class="sec-tag">A grande ideia</div>
+  <div class="sec-title">Nao e apenas mais um negocio. E uma plataforma.</div>
   <div class="divider"></div>
-  <p class="section-lead">Contratar alguém com este perfil aqui nos EUA custaria entre <strong style="color: var(--navy);">$180.000 e $240.000 por ano</strong>. E mesmo assim você não teria alguém com rede de contatos já estabelecida, experiência operacional local comprovada e entendimento real de como abrir e gerir um negócio americano do zero.</p>
+  <div class="sec-lead">A proposta que apresento nao e para voce entrar em um negocio especifico. E para voce criar a estrutura que vai gerar, gerir e multiplicar negocios nos EUA de forma profissional, escalavel e protegida.</div>
+
+  <div class="statement">
+    <p>Uma <span class="accent">Holding Corp</span> americana e a diferenca entre ser dono de um negocio e ser dono de uma plataforma que gera negocios.</p>
+    <div class="sub">Um investimento inicial. Uma estrutura permanente. Multiplos retornos.</div>
+  </div>
+
+  <div class="holding-flow">
+    <div class="flow-node">
+      <div class="flow-icon">&#127463;&#127479;</div>
+      <div class="flow-lbl">Juninho investe</div>
+      <div class="flow-sub">Capital inicial para estruturar a Holding Corp</div>
+    </div>
+    <div class="flow-arr">&#8594;</div>
+    <div class="flow-node primary">
+      <div style="font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--orange); font-family:'Sora',sans-serif; margin-bottom:4px;">O nucleo</div>
+      <div class="flow-lbl">Holding Corp</div>
+      <div class="flow-sub">Estrutura, gere e expande cada LLC</div>
+    </div>
+    <div class="flow-arr">&#8594;</div>
+    <div class="flow-node">
+      <div class="flow-icon">&#128200;</div>
+      <div class="flow-lbl">LLCs operacionais</div>
+      <div class="flow-sub">Cada negocio em entidade independente</div>
+    </div>
+    <div class="flow-arr">&#8594;</div>
+    <div class="flow-node accent-node">
+      <div class="flow-icon">&#128176;</div>
+      <div class="flow-lbl">Retorno ao Juninho</div>
+      <div class="flow-sub">Dividendos da Corp + participacao nas LLCs</div>
+    </div>
+  </div>
+
   <div class="card-grid">
     <div class="card">
-      <div class="card-icon">🏗️</div>
-      <h3>Experiência operacional real</h3>
-      <p>Já estruturei e operei um negócio de importação nos EUA (Levitta Concepts), com toda a complexidade logística, fiscal e comercial que isso exige aqui.</p>
+      <div class="card-num">Corp, nao LLC</div>
+      <div class="card-title">Por que uma Corporation e nao uma LLC?</div>
+      <div class="card-body">A Corp tem Board of Directors formal, pode emitir acoes para investidores, tem governance corporativa reconhecida internacionalmente e e a estrutura ideal para uma holding que vai captar capital e expandir. As LLCs operacionais serao as subsidiarias — cada negocio na sua propria entidade protegida.</div>
     </div>
     <div class="card">
-      <div class="card-icon">🤝</div>
-      <h3>Network ativo em Orlando</h3>
-      <p>Tenho contatos diretos com arquitetos, designers de interiores, construtoras, fornecedores e empresários locais: ativos que levam anos para construir.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🇺🇸</div>
-      <h3>Cidadão americano</h3>
-      <p>Posso representar legalmente a empresa, assinar contratos, abrir contas e operar sem nenhuma restrição no mercado americano. Sem burocracia de visto, sem intermediários.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">📋</div>
-      <h3>Capacidade de estruturar</h3>
-      <p>Estruturo o negócio do zero: entidade jurídica, modelo operacional, equipe, canais e parceiros. Você foca no Brasil: eu cuido daqui.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🌎</div>
-      <h3>Ponte Brasil e EUA</h3>
-      <p>Fluente em português e inglês, com entendimento profundo das duas culturas de negócios. Sou a ligação natural entre os investidores brasileiros e o mercado americano.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🔍</div>
-      <h3>Radar de oportunidades</h3>
-      <p>Monitoro o mercado local continuamente e apresento novas oportunidades de investimento com análise real: utilizando minha rede de contatos e conhecimento do terreno.</p>
+      <div class="card-num">Como a Corp ganha dinheiro</div>
+      <div class="card-title">Management Fee: a receita recorrente da Holding</div>
+      <div class="card-body">Cada LLC gerida pela Holding paga um Management Fee percentual. Esse fee e a receita operacional da Corp: cobre os custos da Holding e gera lucro distribuivel aos socios. Juninho ganha em duas frentes: como acionista da Corp e como possivel socio direto de cada LLC.</div>
     </div>
   </div>
 </div>
 
+<!-- POR QUE INVESTIR PRIMEIRO -->
 <div class="section">
-  <p class="section-number">02 &middot; Meu Papel</p>
-  <h2 class="section-title">Operador da sua holding nos EUA: você investe, eu executo, vocês enxergam tudo</h2>
+  <div class="sec-tag">O argumento mais importante</div>
+  <div class="sec-title">Por que investir primeiro na criacao da Holding?</div>
   <div class="divider"></div>
-  <p class="section-lead">Não serei apenas o operador de um produto. Serei a cabeça executiva da sua holding nos Estados Unidos, cuidando de cada investimento do grupo com disciplina, transparência total e prestação de contas constante a você e ao Francisco.</p>
+  <div class="sec-lead">Antes de qualquer negocio especifico, a Holding precisa existir. Ela e a base de tudo. Sem ela, cada negocio e um projeto isolado. Com ela, cada novo negocio se torna parte de um portfolio estruturado que voce controla.</div>
 
-  <div class="highlight-box">
-    <p><strong>O modelo é simples:</strong> Você tem capital e visão de negócio. Eu tenho o conhecimento do mercado americano, a rede de contatos local e a capacidade de colocar tudo em pé do jeito certo. Você e o Francisco terão acesso total a tudo que acontece aqui: contas, contratos, resultados e decisões. Sem surpresas, sem caixa preta. Você decide onde investir. Eu garanto que o investimento funciona.</p>
-  </div>
-
-  <div class="step-list">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-content">
-        <h4>Abertura e estruturação jurídica</h4>
-        <p>Coordeno a abertura da entidade americana junto com contador e advogado locais, garantindo que a estrutura está correta desde o início: inclusive pensando nos seus objetivos de longo prazo.</p>
-      </div>
+  <div class="compare-grid">
+    <div class="compare-bad">
+      <div class="compare-label">X Sem a Holding</div>
+      <div class="compare-h">Negocios isolados</div>
+      <div class="compare-item">Cada negocio e uma aventura separada</div>
+      <div class="compare-item">Sem governance ou estrutura formal</div>
+      <div class="compare-item">Risco de um negocio contaminar o outro</div>
+      <div class="compare-item">Dificil atrair investidores externos</div>
+      <div class="compare-item">Sem veiculo profissional nos EUA</div>
     </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-content">
-        <h4>Desenvolvimento dos negócios prioritários</h4>
-        <p>Lidero a entrada nos mercados de LED (distribuição B2B) e Solar + EV Charging: pesquisando, prospectando, fechando parceiros e estruturando as operações de cada frente.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-content">
-        <h4>Gestão do dia a dia e da equipe</h4>
-        <p>Conforme o negócio cresce, contrato e gerencio as pessoas certas para cada função. Você não vai precisar microgerir daqui do Brasil.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <div class="step-content">
-        <h4>Identificação de novas oportunidades</h4>
-        <p>Fico de olho no mercado americano e apresento oportunidades que façam sentido para o grupo. Você decide onde investir: eu apresento com análise real e séria.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">5</div>
-      <div class="step-content">
-        <h4>Transparência total em tempo real</h4>
-        <p>Você e o Francisco terão acesso a tudo, a qualquer momento: contas bancárias, contratos, relatórios mensais de resultado, pipeline de vendas e decisões operacionais. Nada acontece no escuro. Vocês investem com a tranquilidade de saber exatamente onde está cada centavo.</p>
-      </div>
+    <div class="compare-good">
+      <div class="compare-label">&#10003; Com a Holding Corp</div>
+      <div class="compare-h">Uma plataforma de negocios</div>
+      <div class="compare-item">Portfolio de LLCs gerido profissionalmente</div>
+      <div class="compare-item">Governance corporativa americana formal</div>
+      <div class="compare-item">Isolamento total de risco entre LLCs</div>
+      <div class="compare-item">Estrutura pronta para receber investidores</div>
+      <div class="compare-item">Corp americana com Board e acionistas</div>
     </div>
   </div>
 
-  <div style="background: var(--white); border-radius: 14px; padding: 28px 28px; border: 1px solid rgba(13,27,42,0.08); margin-top: 40px; display: flex; gap: 20px; align-items: flex-start;">
-    <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; color: white; flex-shrink: 0;">FN</div>
-    <div>
-      <p style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 14px; color: var(--navy); margin-bottom: 4px;">Francisco Neto, Sócio do Grupo</p>
-      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.65; font-style: italic;">"O Maruan é quem sabe o que perguntar, o que procurar e o que importa no mercado americano. Contratar consultorias para fazer o que ele faz custaria muito mais. Precisamos dele focado neste projeto."</p>
+  <div class="card-grid-3" style="margin-top:8px;">
+    <div class="card">
+      <div class="card-num">Isolamento de risco</div>
+      <div class="card-title">Um negocio nao afeta o outro</div>
+      <div class="card-body">Cada LLC e uma entidade separada. Se um negocio enfrentar dificuldades, os outros nao sao atingidos. O patrimonio do Juninho na Corp permanece protegido.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">Governanca formal</div>
+      <div class="card-title">Board com autoridade clara</div>
+      <div class="card-body">Todo investimento precisa de aprovacao formal do Board. Isso protege o Juninho, cria registro legal de cada decisao e profissionaliza a gestao do portfolio.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">Escalabilidade</div>
+      <div class="card-title">Uma estrutura, infinitos negocios</div>
+      <div class="card-body">Nova oportunidade identificada? Cria-se uma nova LLC sob a Holding. A estrutura de governance, juridico e gestao ja existe. O custo marginal de adicionar um negocio e dramaticamente menor.</div>
     </div>
   </div>
+
+  <div class="orange-box"><strong>O investimento inicial cria a infraestrutura permanente.</strong> Os negocios vem depois — e cada um deles retorna capital para a Holding, que distribui para os acionistas. O Juninho nao esta comprando um negocio. Esta construindo a plataforma que vai gerar negocios para sempre.</div>
 </div>
 
-</div>
+</div><!-- end page -->
 
+<!-- DARK SECTION: INVESTIDORES BRASILEIROS -->
 <div class="dark-section">
-<div class="page" style="padding-top: 0;">
-  <p class="section-number">03 &middot; Os Negócios</p>
-  <h2 class="section-title">Oportunidades identificadas. E um radar sempre ligado.</h2>
+<div class="page" style="padding-top:0;">
+  <div class="sec-tag">O ativo mais valioso</div>
+  <div class="sec-title-w">Voce tem o que investidores brasileiros nao tem: uma Corp americana pronta.</div>
   <div class="divider"></div>
-  <p class="section-lead">Dois negócios já validados e prontos para estruturar. Mais dois no radar, com potencial real. E parte central do meu papel será exatamente esta: pesquisar, identificar e apresentar oportunidades continuamente, dentro da minha rede de contatos e do mercado americano.</p>
+  <div class="sec-lead-w">Com a Holding Corp estruturada, o Juninho nao leva mais apenas uma ideia de negocio para seus contatos no Brasil. Ele leva um veiculo profissional americano, com governance formal, gestao dedicada e oportunidades reais de retorno em dolares.</div>
+
+  <div class="statement" style="background:var(--navy-mid); margin-bottom:28px;">
+    <p>Voce para de ser o Juninho que quer abrir um negocio nos EUA. Voce vira o <span class="accent">Juninho que opera uma Holding Corp americana</span> — e esta abrindo espaco para investidores selecionados.</p>
+  </div>
+
   <div class="card-grid">
     <div class="dark-card">
-      <div class="card-icon" style="background: rgba(232,100,42,0.15);">📺</div>
-      <h3>Negócio 1: LED (Distribuição B2B)</h3>
-      <p>Atuamos como distribuidores e atacadistas de telas LED para empresas instaladoras, integradores AV e sign companies na Flórida: não para o consumidor final. O capital do grupo é a vantagem competitiva real: poucos têm capacidade de importar em volume.</p>
+      <div class="card-num" style="color:var(--orange);">O contexto</div>
+      <div class="card-title">Brasileiros querem investir nos EUA</div>
+      <div class="card-body">A demanda por investimentos em dolares nunca foi tao alta no Brasil. Porem, a maioria dos investidores nao sabe como estruturar uma entrada nos EUA de forma segura, legal e profissional. Voce tera exatamente isso pronto para oferecer.</div>
     </div>
     <div class="dark-card">
-      <div class="card-icon" style="background: rgba(232,100,42,0.15);">⚡</div>
-      <h3>Negócio 2: Solar + EV Charging</h3>
-      <p>Instalamos estações de recarga de carros elétricos com energia solar integrada em cada ponto: condomínios, construtoras, estacionamentos comerciais. Um ativo que gera receita recorrente e se valoriza com o tempo.</p>
+      <div class="card-num" style="color:var(--orange);">O que voce oferece</div>
+      <div class="card-title">Uma LLC por oportunidade, com gestao incluida</div>
+      <div class="card-body">Cada negocio que a Holding estruturar pode ter investidores externos como socios da LLC especifica. O investidor entra com capital, a Holding entra com gestao e operacao. O Management Fee cobre os custos. O lucro e dividido conforme os termos acordados.</div>
+    </div>
+    <div class="dark-card">
+      <div class="card-num" style="color:var(--orange);">O papel do Juninho</div>
+      <div class="card-title">Chairman e conector de capital</div>
+      <div class="card-body">Como Chairman do Board e Socio Majoritario da Corp, Juninho controla quais investidores entram e em quais LLCs. Ele tem controle total sobre quem participa do seu portfolio americano — e ganha como acionista em cada negocio estruturado.</div>
+    </div>
+    <div class="dark-card">
+      <div class="card-num" style="color:var(--orange);">O resultado</div>
+      <div class="card-title">Uma holding privada para o mercado americano</div>
+      <div class="card-body">Com o tempo, a Holding Corp vira a estrutura atraves da qual o Juninho e seus parceiros investem em oportunidades nos EUA de forma organizada, protegida e lucrativa. Cada negocio bem-sucedido valoriza o portfolio da Corp.</div>
     </div>
   </div>
 
-  <div style="margin-top: 20px;">
-    <p class="section-number" style="margin-bottom: 12px;">No Radar &middot; Oportunidades em Análise</p>
+  <!-- Radar section -->
+  <div style="margin-top:28px; padding:22px 24px; background:rgba(255,255,255,0.04); border-radius:12px; border:1px dashed rgba(255,255,255,0.12);">
+    <div class="sec-tag" style="margin-bottom:14px;">No Radar &middot; Primeiras oportunidades identificadas</div>
     <div class="card-grid">
-      <div class="dark-card" style="border: 1px dashed rgba(255,255,255,0.2);">
-        <h3>🇧🇷 Importação e Distribuição de Alimentos Brasileiros</h3>
-        <p>Área promissora com forte demanda da comunidade latina em crescimento na Flórida Central. Pesquisa aprofundada a ser realizada como parte do meu trabalho de mapeamento de oportunidades.</p>
+      <div style="background:rgba(255,255,255,0.06); border-radius:10px; padding:18px 20px; border:0.5px solid rgba(255,255,255,0.1);">
+        <div class="card-title" style="color:rgba(255,255,255,0.75); margin-bottom:6px;">Monitores LED &mdash; Distribuicao B2B</div>
+        <div class="card-body" style="color:rgba(255,255,255,0.4);">Importacao e distribuicao atacadista para empresas instaladoras na Florida. Modelo validado com capital disponivel para importar em volume.</div>
       </div>
-      <div class="dark-card" style="border: 1px dashed rgba(255,255,255,0.2);">
-        <h3>❄️ Setor de Ar Condicionado</h3>
-        <p>Mercado de altíssima demanda na Flórida, com oportunidades tanto em instalação quanto em importação de equipamentos. Análise de viabilidade e modelo de entrada a desenvolver.</p>
+      <div style="background:rgba(255,255,255,0.06); border-radius:10px; padding:18px 20px; border:0.5px solid rgba(255,255,255,0.1);">
+        <div class="card-title" style="color:rgba(255,255,255,0.75); margin-bottom:6px;">Solar + EV Charging</div>
+        <div class="card-body" style="color:rgba(255,255,255,0.4);">Estacoes de recarga com energia solar integrada. Incentivos fiscais expressivos com prazo ate 30 de junho de 2026.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03); border-radius:10px; padding:18px 20px; border:0.5px dashed rgba(255,255,255,0.08);">
+        <div class="card-title" style="color:rgba(255,255,255,0.45); margin-bottom:6px;">Importacao de Alimentos Brasileiros</div>
+        <div class="card-body" style="color:rgba(255,255,255,0.25);">Area promissora com forte demanda latina em crescimento na Florida. Pesquisa aprofundada a iniciar.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03); border-radius:10px; padding:18px 20px; border:0.5px dashed rgba(255,255,255,0.08);">
+        <div class="card-title" style="color:rgba(255,255,255,0.45); margin-bottom:6px;">Setor de Ar Condicionado</div>
+        <div class="card-body" style="color:rgba(255,255,255,0.25);">Mercado de altissima demanda na Florida. Oportunidades em instalacao e importacao de equipamentos. Em analise.</div>
       </div>
     </div>
-    <p style="font-size: 14px; color: rgba(255,255,255,0.4); margin-top: 16px; line-height: 1.7;">Identificar e avaliar oportunidades como estas será uma das funções centrais do meu papel como operador da holding nos EUA, sempre utilizando minha rede de contatos local e o conhecimento profundo do mercado americano.</p>
+    <div style="font-size:13px; color:rgba(255,255,255,0.28); margin-top:16px; padding-top:16px; border-top:0.5px solid rgba(255,255,255,0.08);">Identificar e avaliar novas oportunidades como essas e uma das funcoes centrais do COO da Holding — utilizando network local e conhecimento do mercado americano.</div>
   </div>
 </div>
-</div>
+</div><!-- end dark section -->
 
 <div class="page">
 
+<!-- A ESTRUTURA: ORG CHART -->
 <div class="section">
-  <p class="section-number">04 &middot; Negócio 1</p>
-  <h2 class="section-title">LED: a estratégia que ninguém usa: porque não tem o capital que você tem</h2>
+  <div class="sec-tag">A estrutura</div>
+  <div class="sec-title">Quem e quem na Holding Corp</div>
   <div class="divider"></div>
-  <p class="section-lead">O mercado de telas LED na Flórida Central tem demanda consolidada. O problema é que a maioria dos players entra vendendo para o consumidor final, com margens apertadas e muita concorrência. Nós vamos entrar por cima.</p>
+  <div class="sec-lead">Uma estrutura clara, com papeis bem definidos e autoridade bem distribuida. Juninho controla tudo via Board. Francisco representa nos EUA. Eu opero tudo.</div>
 
-  <div class="compare-grid">
-    <div class="compare-bad">
-      <p class="compare-label">❌ A estratégia errada</p>
-      <h3>Vender para o consumidor final</h3>
-      <div class="compare-item">: Concorrência intensa e guerra de preços</div>
-      <div class="compare-item">: Suporte pós-venda complexo e custoso</div>
-      <div class="compare-item">: Margem espremida em cada venda</div>
-      <div class="compare-item">: Difícil escalar sem estrutura enorme</div>
-    </div>
-    <div class="compare-good">
-      <p class="compare-label">✓ A estratégia certa</p>
-      <h3>Distribuidor e atacadista B2B</h3>
-      <div class="compare-item">+ Volume maior, relação comercial contínua</div>
-      <div class="compare-item">+ Poucos têm capital para este modelo</div>
-      <div class="compare-item">+ Margem previsível e escalável</div>
-      <div class="compare-item">+ Fundação para a fábrica em 3 anos</div>
-    </div>
+  <div class="org-wrap">
+    <div class="org-title">Organograma &mdash; Juninho Holding Corp</div>
+    <svg width="100%" viewBox="0 0 860 532" role="img" style="display:block;">
+      <title>Organograma Juninho Holding Corp</title>
+      <desc>Estrutura corporativa com Board of Directors, Holding Corp e LLCs operacionais independentes.</desc>
+      <defs>
+        <marker id="ar1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 2L8 5L2 8" fill="none" stroke="#888780" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <!-- BOARD -->
+      <rect x="280" y="22" width="300" height="60" rx="8" fill="#E8642A"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="14" fill="#FFFFFF" x="430" y="45" text-anchor="middle" dominant-baseline="central">Board of Directors</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.78)" x="430" y="65" text-anchor="middle" dominant-baseline="central">Juninho &mdash; Chairman</text>
+
+      <!-- Approval note -->
+      <text font-family="Arial,sans-serif" font-size="11" fill="#888780" x="440" y="102" text-anchor="start">Aprova todos os investimentos</text>
+
+      <!-- Arrow Board to Holding -->
+      <line x1="430" y1="82" x2="430" y2="128" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#ar1)"/>
+
+      <!-- HOLDING CONTAINER -->
+      <rect x="38" y="130" width="784" height="212" rx="12" fill="#F5F2EB" stroke="#D3D1C7" stroke-width="1" stroke-dasharray="9 5"/>
+
+      <!-- Holding label -->
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="14" fill="#0D1B2A" x="430" y="151" text-anchor="middle" dominant-baseline="central">Juninho Holding Corp</text>
+
+      <!-- Shareholder badge: Juninho -->
+      <rect x="66" y="164" width="220" height="22" rx="11" fill="#FDECD9" stroke="#E8642A" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#B84E18" x="176" y="175" text-anchor="middle" dominant-baseline="central">Juninho &mdash; Socio Majoritario</text>
+
+      <!-- Shareholder badge: Francisco -->
+      <rect x="306" y="164" width="198" height="22" rx="11" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#0C447C" x="405" y="175" text-anchor="middle" dominant-baseline="central">Francisco Neto &mdash; Socio</text>
+
+      <!-- President box -->
+      <rect x="52" y="196" width="268" height="132" rx="8" fill="#EBF3FC" stroke="#378ADD" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="10.5" font-weight="600" fill="#185FA5" x="186" y="215" text-anchor="middle" dominant-baseline="central">PRESIDENT</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="14" fill="#0C447C" x="186" y="235" text-anchor="middle" dominant-baseline="central">Francisco Neto</text>
+      <line x1="70" y1="246" x2="302" y2="246" stroke="#B5D4F4" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#185FA5" x="186" y="262" text-anchor="middle" dominant-baseline="central">Autoridade juridica,</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#185FA5" x="186" y="278" text-anchor="middle" dominant-baseline="central">financeira e fiscal</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#185FA5" x="186" y="294" text-anchor="middle" dominant-baseline="central">Aprovacoes operacionais</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#185FA5" x="186" y="310" text-anchor="middle" dominant-baseline="central">Representa a Corp nos EUA</text>
+
+      <!-- reporta a label + arrow -->
+      <text font-family="Arial,sans-serif" font-size="11" fill="#B4B2A9" x="430" y="254" text-anchor="middle" dominant-baseline="central">reporta a</text>
+      <line x1="538" y1="264" x2="322" y2="264" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#ar1)"/>
+
+      <!-- COO box -->
+      <rect x="540" y="196" width="268" height="132" rx="8" fill="#E3F4EE" stroke="#1D9E75" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="10.5" font-weight="600" fill="#0F6E56" x="674" y="215" text-anchor="middle" dominant-baseline="central">COO</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="14" fill="#085041" x="674" y="235" text-anchor="middle" dominant-baseline="central">Maruan Barakat</text>
+      <line x1="558" y1="246" x2="790" y2="246" stroke="#9FE1CB" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#0F6E56" x="674" y="262" text-anchor="middle" dominant-baseline="central">Operacoes e estruturacao</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#0F6E56" x="674" y="278" text-anchor="middle" dominant-baseline="central">Gestao de todas as LLCs</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#0F6E56" x="674" y="294" text-anchor="middle" dominant-baseline="central">Novos negocios</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#0F6E56" x="674" y="310" text-anchor="middle" dominant-baseline="central">Expansao do portfolio</text>
+
+      <!-- Arrows Holding to LLCs -->
+      <line x1="168" y1="342" x2="168" y2="368" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#ar1)"/>
+      <line x1="430" y1="342" x2="430" y2="368" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#ar1)"/>
+      <line x1="692" y1="342" x2="692" y2="368" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#ar1)"/>
+
+      <!-- LLC 1 -->
+      <rect x="52" y="370" width="232" height="76" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#534AB7" x="168" y="388" text-anchor="middle" dominant-baseline="central">LLC</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="13.5" fill="#3C3489" x="168" y="407" text-anchor="middle" dominant-baseline="central">Monitores LED</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#534AB7" x="168" y="426" text-anchor="middle" dominant-baseline="central">Distribuicao B2B</text>
+
+      <!-- LLC 2 -->
+      <rect x="314" y="370" width="232" height="76" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#534AB7" x="430" y="388" text-anchor="middle" dominant-baseline="central">LLC</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="13.5" fill="#3C3489" x="430" y="407" text-anchor="middle" dominant-baseline="central">Solar + EV Charging</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#534AB7" x="430" y="426" text-anchor="middle" dominant-baseline="central">Infraestrutura</text>
+
+      <!-- LLC 3 (future) -->
+      <rect x="576" y="370" width="232" height="76" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="6 3"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#888780" x="692" y="388" text-anchor="middle" dominant-baseline="central">LLC</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="13.5" fill="#5F5E5A" x="692" y="407" text-anchor="middle" dominant-baseline="central">Proximas</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#888780" x="692" y="426" text-anchor="middle" dominant-baseline="central">oportunidades</text>
+
+      <!-- Sub-structure connectors -->
+      <line x1="168" y1="446" x2="168" y2="457" stroke="#D3D1C7" stroke-width="0.8"/>
+      <line x1="430" y1="446" x2="430" y2="457" stroke="#D3D1C7" stroke-width="0.8"/>
+
+      <!-- Sub-structure boxes -->
+      <rect x="84" y="458" width="168" height="34" rx="6" fill="none" stroke="#D3D1C7" stroke-width="0.8" stroke-dasharray="4 3"/>
+      <text font-family="Arial,sans-serif" font-size="10.5" fill="#888780" x="168" y="470" text-anchor="middle" dominant-baseline="central">Estrutura propria:</text>
+      <text font-family="Arial,sans-serif" font-size="10.5" fill="#888780" x="168" y="484" text-anchor="middle" dominant-baseline="central">Diretores · Gerentes</text>
+
+      <rect x="346" y="458" width="168" height="34" rx="6" fill="none" stroke="#D3D1C7" stroke-width="0.8" stroke-dasharray="4 3"/>
+      <text font-family="Arial,sans-serif" font-size="10.5" fill="#888780" x="430" y="470" text-anchor="middle" dominant-baseline="central">Estrutura propria:</text>
+      <text font-family="Arial,sans-serif" font-size="10.5" fill="#888780" x="430" y="484" text-anchor="middle" dominant-baseline="central">Diretores · Gerentes</text>
+
+      <!-- Bottom note -->
+      <text font-family="Arial,sans-serif" font-size="11" fill="#B4B2A9" x="430" y="522" text-anchor="middle" dominant-baseline="central">Cada LLC: participacao da Holding Corp + investidores externos especificos por negocio</text>
+    </svg>
   </div>
-
-  <div class="highlight-box">
-    <p><strong>Visão de longo prazo:</strong> O objetivo de abrir uma fábrica de LED nos EUA em 3 anos é ambicioso: e possível. Mas o caminho certo começa sendo distribuidor: você aprende o mercado por dentro, constrói relações com os compradores, e quando a fábrica abrir, já tem os clientes esperando.</p>
-  </div>
-
-  <p style="font-size: 15px; color: var(--text-muted); line-height: 1.75;"><strong style="color: var(--navy);">Estratégia de entrada:</strong> Colocaremos monitores em comodato em showrooms de móveis planejados e lojas de soluções para áreas externas e piscinas: parcerias que geram visibilidade sem custo de mídia e abrem portas para os instaladores que são nossos clientes reais.</p>
 </div>
 
+<!-- MEU VALOR -->
 <div class="section">
-  <p class="section-number">05 &middot; Negócio 2</p>
-  <h2 class="section-title">Solar + EV Charging: dois modelos, dois mercados, uma grande oportunidade</h2>
+  <div class="sec-tag">01 &middot; Meu Valor</div>
+  <div class="sec-title">O que eu trago que nao se contrata no mercado por este preco</div>
   <div class="divider"></div>
-  <p class="section-lead">Pesquisamos a fundo a legislação. A Flórida tem uma restrição específica que muda o modelo aqui, mas abre uma porta diferente, e outros estados nos dão a opção da usina central que você imaginou originalmente.</p>
+  <div class="sec-lead">Contratar alguem com este perfil nos EUA custaria entre <strong style="color:var(--navy);">$180.000 e $240.000 por ano</strong>. E mesmo assim voce nao teria alguem com network ja estabelecido, experiencia operacional comprovada e cidadania americana — tudo junto, desde o primeiro dia.</div>
 
-  <div class="compare-grid">
-    <div class="compare-bad">
-      <p class="compare-label">❌ Não funciona na Flórida</p>
-      <h3>Usina central + créditos remotos</h3>
-      <div class="compare-item">Lei da Flórida não permite créditos entre medidores diferentes</div>
-      <div class="compare-item">Não é possível vender energia diretamente a terceiros</div>
-      <div class="compare-item">Modelo regulatório bloqueia esta estrutura no estado</div>
-    </div>
-    <div class="compare-good">
-      <p class="compare-label">✓ O modelo correto para a Flórida</p>
-      <h3>Solar integrado em cada ponto</h3>
-      <div class="compare-item">+ Solar instalado no próprio local do carregador</div>
-      <div class="compare-item">+ Energia consumida antes de tocar na rede</div>
-      <div class="compare-item">+ Custo de eletricidade praticamente zero</div>
-      <div class="compare-item">+ Cada ponto é um ativo independente que se valoriza</div>
-    </div>
-  </div>
-
-  <div class="green-box">
-    <h4>Por que o modelo da Flórida é mais lucrativo do que parece?</h4>
-    <p>Ao instalar o solar diretamente em cada estação de recarga, sua energia tem custo próximo de zero, enquanto os concorrentes pagam entre $0,13 e $0,18 por kWh para a distribuidora. Isso significa que enquanto todos cobram o mesmo preço pelo carregamento, sua margem é dramaticamente maior. Com parcerias com construtoras na fase de obra, instalamos os carregadores e os painéis de uma vez, minimizando custo e maximizando retorno desde o primeiro dia.</p>
-  </div>
-
-  <div class="highlight-box">
-    <p><strong>A visão de expansão: outros estados permitem a usina central.</strong> A restrição é da Flórida, não do país. Em mais de 40 estados americanos, incluindo New Jersey, Massachusetts, New York, Maryland e Connecticut, existe o chamado virtual net metering: uma usina solar central pode gerar créditos de energia que são distribuídos para múltiplos pontos de consumo em locais diferentes. Isso significa que, em uma segunda fase, o grupo pode instalar usinas solares em outros estados e operar redes de carregadores alimentadas por uma única fonte. É o modelo original que você imaginou e ele existe, só não é na Flórida. Começamos aqui com o modelo behind-the-meter, provamos o negócio e expandimos para outros estados com o modelo de usina centralizada.</p>
-  </div>
-
-  <div class="card-grid" style="margin-top: 0;">
-    <div class="card" style="border-left: 3px solid var(--green);">
-      <div class="card-icon" style="background: var(--green-light);">🏗️</div>
-      <h3>Fase 1: Flórida</h3>
-      <p>Solar integrado em cada ponto de recarga. Modelo behind-the-meter. Começamos aqui, provamos o negócio e construímos os ativos.</p>
-    </div>
-    <div class="card" style="border-left: 3px solid var(--orange);">
-      <div class="card-icon">🗺️</div>
-      <h3>Fase 2: Expansão nacional</h3>
-      <p>Usinas solares centrais em estados que permitem virtual net metering (New Jersey, New York, Massachusetts, Maryland, Connecticut e outros 40 estados). Uma usina alimenta toda uma rede de carregadores.</p>
-    </div>
+  <div class="card-grid">
+    <div class="card"><div class="card-num">01</div><div class="card-title">Experiencia operacional real</div><div class="card-body">Ja estruturei e operei um negocio de importacao nos EUA (Levitta Concepts), com toda a complexidade logistica, fiscal e comercial que isso exige aqui.</div></div>
+    <div class="card"><div class="card-num">02</div><div class="card-title">Network ativo em Orlando</div><div class="card-body">Tenho contatos diretos com arquitetos, designers de interiores, construtoras, fornecedores e empresarios locais — ativos que levam anos para construir.</div></div>
+    <div class="card"><div class="card-num">03</div><div class="card-title">Cidadao americano</div><div class="card-body">Posso representar legalmente a Corp, assinar contratos, abrir contas e operar sem nenhuma restricao no mercado americano. Sem burocracia de visto, sem intermediarios.</div></div>
+    <div class="card"><div class="card-num">04</div><div class="card-title">Capacidade de estruturar</div><div class="card-body">Estruturo o negocio do zero: entidade juridica, modelo operacional, equipe, canais e parceiros. Voce foca no Brasil e nos investidores — eu cuido de tudo daqui.</div></div>
+    <div class="card"><div class="card-num">05</div><div class="card-title">Ponte Brasil e EUA</div><div class="card-body">Fluente em portugues e ingles, com entendimento profundo das duas culturas de negocios. Sou a ligacao natural entre o capital brasileiro e o mercado americano.</div></div>
+    <div class="card"><div class="card-num">06</div><div class="card-title">Radar de oportunidades</div><div class="card-body">Monitoro o mercado local continuamente e apresento novas oportunidades de investimento com analise real — utilizando meu network e conhecimento do terreno americano.</div></div>
   </div>
 </div>
 
+<!-- MEU PAPEL -->
 <div class="section">
-  <p class="section-number">06 &middot; Urgência Real</p>
-  <h2 class="section-title">Os incentivos fiscais são reais: e um deles expira em 30 de junho</h2>
+  <div class="sec-tag">02 &middot; Meu Papel</div>
+  <div class="sec-title">COO da Holding: voce decide, eu construo e opero</div>
   <div class="divider"></div>
-  <p class="section-lead">Como empresa (não pessoa física), os benefícios fiscais neste negócio são excepcionais. E existe uma janela que se fecha em menos de 65 dias.</p>
+  <div class="sec-lead">Nao serei apenas o operador de um negocio. Serei o Chief Operating Officer da Holding Corp, responsavel por transformar as decisoes do Board em realidade operacional, com transparencia total para voce e para o Francisco.</div>
 
-  <div class="incentive-grid">
-    <div class="incentive-card">
-      <div class="incentive-value">30%</div>
-      <div class="incentive-label">Crédito fiscal federal sobre instalações solares comerciais (ITC Section 48E): válido até 2027</div>
-    </div>
-    <div class="incentive-card">
-      <div class="incentive-value">100%</div>
-      <div class="incentive-label">Depreciação acelerada no primeiro ano do ativo: reduz imposto imediatamente no ano 1</div>
-    </div>
-    <div class="incentive-card">
-      <div class="incentive-value">$100K</div>
-      <div class="incentive-label">Crédito fiscal por ponto de recarga instalado (Seção 30C): expira em 30 de junho de 2026</div>
-    </div>
-    <div class="incentive-card">
-      <div class="incentive-value">~40%</div>
-      <div class="incentive-label">Redução no custo efetivo de um projeto de $1M após todos os incentivos fiscais no primeiro ano</div>
-    </div>
+  <div class="orange-box"><strong>O modelo e simples:</strong> Voce tem capital, visao e uma rede de contatos no Brasil. Eu tenho o conhecimento do mercado americano, a rede de contatos local e a capacidade de colocar tudo em pe do jeito certo. Voce e o Francisco terao acesso total a tudo: contas, contratos, resultados e decisoes. Sem surpresas, sem caixa preta.</div>
+
+  <div>
+    <div class="step"><div class="step-num">1</div><div><div class="step-title">Abertura e estruturacao juridica da Corp</div><div class="step-body">Coordeno a abertura da Corporation americana com contador e advogado locais, estruturando o Board of Directors, o quadro societario e os documentos corporativos corretamente desde o inicio.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div><div class="step-title">Criacao e estruturacao das LLCs operacionais</div><div class="step-body">Para cada negocio aprovado pelo Board, estruturo a LLC correspondente: entidade, modelo de negocio, plano operacional, parceiros locais, canais de venda e compliance regulatorio.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div><div class="step-title">Gestao operacional de todas as LLCs</div><div class="step-body">Cada LLC criada fica sob minha gestao como COO da Holding. Conforme cada LLC cresce, estruturo a equipe independente necessaria — diretores, gerentes e operadores especificos para aquele negocio.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div><div class="step-title">Identificacao e apresentacao de novas oportunidades</div><div class="step-body">Utilizando meu network e meu conhecimento do mercado americano, apresento continuamente novas oportunidades ao Board com analise real de viabilidade, modelo de negocio e potencial de retorno.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div><div class="step-title">Transparencia total em tempo real</div><div class="step-body">Voce e o Francisco terao acesso a tudo, a qualquer momento: contas bancarias, contratos, relatorios mensais, pipeline de negocios e decisoes operacionais. Nada acontece no escuro.</div></div></div>
+    <div class="step"><div class="step-num">6</div><div><div class="step-title">Expansao continua do portfolio</div><div class="step-body">O core business da Holding e gerar e gerir novos negocios. Meu trabalho como COO e manter esse motor funcionando — sempre trazendo oportunidades avaliadas, fundamentadas e prontas para aprovacao do Board.</div></div></div>
   </div>
 
-  <div class="alert-box">
-    <div class="alert-icon">⚠️</div>
+  <div class="chico-card">
+    <div class="avatar-n">FN</div>
     <div>
-      <h4>Prazo crítico: 30 de junho de 2026 (faltam menos de 65 dias)</h4>
-      <p>O crédito fiscal de até $100.000 por ponto de recarga instalado expira oficialmente em 30 de junho. Para capturar este benefício, precisamos ter as instalações iniciadas antes desta data. Este incentivo não volta: e pode representar centenas de milhares de dólares a menos de imposto no primeiro ano de operação.</p>
+      <div style="font-family:'Sora',sans-serif; font-weight:600; font-size:14px; color:var(--navy); margin-bottom:4px;">Francisco Neto, President da Holding</div>
+      <div style="font-size:13.5px; color:var(--text-muted); line-height:1.65; font-style:italic;">"O Maruan e quem sabe o que perguntar, o que procurar e o que importa no mercado americano. Contratar consultorias para fazer o que ele faz custaria muito mais. Precisamos dele focado neste projeto."</div>
     </div>
   </div>
 </div>
 
+<!-- NEGOCIOS IDENTIFICADOS -->
 <div class="section">
-  <p class="section-number">07 &middot; Minha Proposta</p>
-  <h2 class="section-title">O que proponho: claro, justo e protegido para os dois lados</h2>
+  <div class="sec-tag">Os primeiros negocios</div>
+  <div class="sec-title">2 LLCs ja identificadas, analisadas e validadas</div>
   <div class="divider"></div>
-  <p class="section-lead">Não quero começar este relacionamento sem clareza sobre o meu papel e a minha compensação. Isso protege você: e me protege. Negócios sérios começam com acordos claros.</p>
+  <div class="sec-lead">Antes de apresentar esta proposta, realizamos uma analise aprofundada do mercado para identificar os primeiros negocios viaveis para a Holding. Dois foram validados com dados reais, pesquisa de mercado, analise regulatoria e modelo de negocio definido.</div>
+
+  <div class="card-grid">
+    <div class="card" style="border-top: 3px solid var(--orange);">
+      <div class="card-num" style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span style="background:var(--green); color:white; font-size:10px; font-weight:700; padding:3px 10px; border-radius:12px; font-family:'Sora',sans-serif;">VIAVEL</span>
+        LLC 01
+      </div>
+      <div class="card-title">Monitores LED &mdash; Distribuicao B2B</div>
+      <div class="card-body" style="margin-bottom:14px;">Mercado validado na Florida Central. Estrategia de atacadista para empresas instaladoras, integradores e sign companies. Capital disponivel para importar em volume — a vantagem que poucos concorrentes tem. Modelo com visao de fabrica propria em 3 anos.</div>
+      <div style="font-size:12px; color:var(--text-muted); border-top:0.5px solid var(--border); padding-top:10px;">
+        <span style="color:var(--green); font-weight:600;">&#10003;</span> Mercado educado e com demanda &nbsp;&middot;&nbsp;
+        <span style="color:var(--green); font-weight:600;">&#10003;</span> Modelo B2B validado &nbsp;&middot;&nbsp;
+        <span style="color:var(--green); font-weight:600;">&#10003;</span> Estrategia de entrada definida
+      </div>
+    </div>
+    <div class="card" style="border-top: 3px solid var(--orange);">
+      <div class="card-num" style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span style="background:var(--green); color:white; font-size:10px; font-weight:700; padding:3px 10px; border-radius:12px; font-family:'Sora',sans-serif;">VIAVEL</span>
+        LLC 02
+      </div>
+      <div class="card-title">Solar + EV Charging</div>
+      <div class="card-body" style="margin-bottom:14px;">Modelo behind-the-meter validado para a Florida. Expansao nacional via virtual net metering em mais de 40 estados. Oportunidade critica: incentivos fiscais de ate $100.000 por ponto de recarga expiram em 30 de junho de 2026.</div>
+      <div style="font-size:12px; color:var(--text-muted); border-top:0.5px solid var(--border); padding-top:10px;">
+        <span style="color:var(--green); font-weight:600;">&#10003;</span> Modelo regulatorio validado &nbsp;&middot;&nbsp;
+        <span style="color:var(--green); font-weight:600;">&#10003;</span> Incentivos fiscais confirmados &nbsp;&middot;&nbsp;
+        <span style="color:var(--gold); font-weight:600;">&#9888;</span> Urgencia: 30 jun
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px; background:var(--navy); border-radius:12px; padding:24px 28px; display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
+    <div style="flex:1; min-width:260px;">
+      <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:15px; color:var(--white); margin-bottom:6px;">Analise detalhada disponivel</div>
+      <div style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.65;">A analise completa de cada LLC — modelo de negocio, estrategia de entrada, analise competitiva, regulamentacao e incentivos fiscais — esta documentada em um segundo documento de suporte.</div>
+    </div>
+    <div style="flex-shrink:0; text-align:center;">
+      <div style="background:var(--orange); color:white; font-family:'Sora',sans-serif; font-weight:700; font-size:13px; padding:12px 24px; border-radius:10px; white-space:nowrap;">Abrir: analise_negocios.html</div>
+      <div style="font-size:11px; color:rgba(255,255,255,0.3); margin-top:8px;">Documento de suporte desta proposta</div>
+    </div>
+  </div>
+</div>
+
+<!-- MINHA PROPOSTA -->
+<div class="section">
+  <div class="sec-tag">Minha Proposta</div>
+  <div class="sec-title">O que proponho: claro, justo e protegido para os dois lados</div>
+  <div class="divider"></div>
+  <div class="sec-lead">Nao quero comecar este relacionamento sem clareza sobre o meu papel e a minha compensacao. Isso protege voce e me protege. Negocios serios comecam com acordos claros.</div>
 
   <div class="comp-card">
     <div class="comp-header">
-      <p class="comp-title">Estrutura de Compensação Proposta</p>
-      <span class="comp-badge">Negociável</span>
+      <div class="comp-title">Estrutura de Compensacao Proposta &mdash; COO</div>
+      <div class="comp-badge">Negociavel</div>
     </div>
-    <div class="comp-row">
-      <span class="comp-row-label">Fase 1: Meses 1 a 6 (estruturação e arranque)</span>
-      <span class="comp-row-value accent">$10.000 / mês líquidos</span>
-    </div>
-    <div class="comp-row">
-      <span class="comp-row-label">Formato de pagamento</span>
-      <span class="comp-row-value">Management Fee via contrato formal</span>
-    </div>
-    <div class="comp-row">
-      <span class="comp-row-label">Fase 2: A partir do mês 7</span>
-      <span class="comp-row-value">Renegociação baseada em resultados reais</span>
-    </div>
-    <div class="comp-row">
-      <span class="comp-row-label">Participação nos lucros</span>
-      <span class="comp-row-value">% a definir em contrato, por negócio operado</span>
-    </div>
-    <div class="comp-row">
-      <span class="comp-row-label">Proteção de saída</span>
-      <span class="comp-row-value">Cláusula de indenização por rescisão antecipada</span>
-    </div>
+    <div class="comp-row"><div class="comp-lbl">Fase 1: Meses 1 a 6 (estruturacao da Corp e arranque)</div><div class="comp-val accent">$10.000 / mes liquidos</div></div>
+    <div class="comp-row"><div class="comp-lbl">Formato de pagamento</div><div class="comp-val">Management Fee via contrato formal</div></div>
+    <div class="comp-row"><div class="comp-lbl">Fase 2: A partir do mes 7</div><div class="comp-val">Renegociacao baseada em resultados reais</div></div>
+    <div class="comp-row"><div class="comp-lbl">Participacao nos lucros</div><div class="comp-val">% a definir em contrato, por negocio operado</div></div>
+    <div class="comp-row"><div class="comp-lbl">Protecao de saida</div><div class="comp-val">Clausula de indenizacao por rescisao antecipada</div></div>
   </div>
 
-  <div class="highlight-box">
-    <p><strong>Por que a proteção de saída importa para os dois lados:</strong> Ao longo dos primeiros 6 meses, abrirei minha rede de contatos, construirei relações em nome do grupo e criarei estruturas que ficam com a empresa. Um contrato bem feito: feito por advogado americano: garante que este relacionamento seja tratado com seriedade dos dois lados, e que ambos saibam exatamente o que acontece em qualquer cenário.</p>
-  </div>
+  <div class="orange-box"><strong>Por que a protecao de saida importa para os dois lados:</strong> Ao longo dos primeiros 6 meses abrirei minha rede de contatos, construirei relacoes em nome da Corp e criarei estruturas que ficam com a empresa. Um contrato bem feito por advogado americano garante que este relacionamento seja tratado com seriedade — e que ambos saibam exatamente o que acontece em qualquer cenario.</div>
 
   <div class="green-box">
-    <h4>O que você recebe por este investimento</h4>
-    <p>Dois negócios sendo estruturados simultaneamente. Um operador dedicado em tempo integral. Acesso a uma rede de contatos construída ao longo de anos. Relatórios e acompanhamento constante. E a tranquilidade de saber que alguém comprometido está cuidando do seu investimento aqui: enquanto você cuida do Brasil.</p>
+    <div class="box-title">O que voce recebe por este investimento</div>
+    <div class="box-body">Uma Holding Corp americana sendo estruturada do zero, com dois negocios prioritarios em andamento, um COO dedicado em tempo integral com cidadania americana, acesso a uma rede de contatos construida ao longo de anos, relatorios e acompanhamento constante. E a tranquilidade de saber que alguem comprometido esta cuidando do seu investimento aqui, enquanto voce cuida do Brasil — e prospecta os proximos investidores.</div>
   </div>
 
-  <div class="next-steps">
-    <h3>Próximos Passos</h3>
-    <p class="sub">O que precisamos resolver nas próximas semanas para começar com o pé direito.</p>
-    <div class="next-item">
-      <div class="next-check">1</div>
-      <div class="next-text"><strong>Alinhar a estrutura societária</strong>: LLC ou Inc, quem são os sócios e em qual percentual, com apoio de contador americano.</div>
-    </div>
-    <div class="next-item">
-      <div class="next-check">2</div>
-      <div class="next-text"><strong>Formalizar o meu contrato</strong>: papel, compensação, participação nos lucros e proteções, feito por advogado americano.</div>
-    </div>
-    <div class="next-item">
-      <div class="next-check">3</div>
-      <div class="next-text"><strong>Iniciar as instalações de EV Charging urgentemente</strong>: antes de 30 de junho para garantir o crédito fiscal de até $100.000 por ponto.</div>
-    </div>
-    <div class="next-item">
-      <div class="next-check">4</div>
-      <div class="next-text"><strong>Definir os primeiros clientes-alvo de LED</strong>: e planejar os monitores em comodato nos showrooms parceiros.</div>
-    </div>
-    <div class="next-item">
-      <div class="next-check">5</div>
-      <div class="next-text"><strong>Construir o plano de negócios de 12 meses</strong>: com budget, metas e roadmap real de execução para os dois negócios.</div>
-    </div>
+  <div class="next-band">
+    <div class="next-title">Proximos Passos</div>
+    <div class="next-sub">O que precisamos resolver nas proximas semanas para comecar com o pe direito.</div>
+    <div class="next-item"><div class="next-check">1</div><div class="next-text"><b>Alinhar o quadro societario da Corp:</b> percentuais de Juninho e Francisco, com apoio de contador e advogado americano.</div></div>
+    <div class="next-item"><div class="next-check">2</div><div class="next-text"><b>Formalizar o meu contrato como COO:</b> papel, compensacao, participacao nos lucros e protecoes — feito por advogado americano.</div></div>
+    <div class="next-item"><div class="next-check">3</div><div class="next-text"><b>Constituir a Holding Corp:</b> abertura da entidade, Board of Directors, contas bancarias e estrutura legal.</div></div>
+    <div class="next-item"><div class="next-check">4</div><div class="next-text"><b>Iniciar as instalacoes de EV Charging urgentemente:</b> antes de 30 de junho para garantir o credito fiscal de ate $100.000 por ponto.</div></div>
+    <div class="next-item"><div class="next-check">5</div><div class="next-text"><b>Construir o plano de negocios de 12 meses:</b> com budget, metas, roadmap e estrutura de captacao de investidores para cada LLC.</div></div>
   </div>
-</div>
-
 </div>
 
 <div class="footer">
-  <p>Preparado por Maruan Barakat &nbsp;·&nbsp; Central Florida, USA &nbsp;·&nbsp; Abril 2026</p>
-  <p style="margin-top: 6px;">Confidencial: uso exclusivo dos sócios do grupo</p>
+  <p>Maruan Barakat &nbsp;&middot;&nbsp; COO Proposto &nbsp;&middot;&nbsp; Central Florida, USA &nbsp;&middot;&nbsp; Abril 2026</p>
+  <p style="margin-top:6px;">Confidencial &mdash; uso exclusivo dos socios do grupo</p>
 </div>
 
+</div><!-- end page -->
 </body>
 </html>

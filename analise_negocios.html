@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analise Detalhada &mdash; LLCs Identificadas</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@400;500&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #0D1B2A; --navy-mid: #1A2E42;
+  --orange: #E8642A; --cream: #F5F2EB;
+  --white: #FFFFFF; --text-dark: #0D1B2A; --text-muted: #5A7A8A;
+  --gold: #C9952A; --gold-lt: #FFF8E6;
+  --green: #1D7A4A; --green-lt: #E6F5EE;
+  --orange-lt: #FEF0E8; --border: #E0DDD5;
+  --red-lt: #FFF1F1; --red: #C0392B; --red-text: #7A2020;
+}
+body { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text-dark); background: var(--cream); line-height: 1.6; }
+.page { max-width: 940px; margin: 0 auto; padding: 0 40px 60px; }
+
+/* COVER */
+.cover { background: var(--navy-mid); min-height: 52vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 56px; position: relative; overflow: hidden; }
+.cover::before { content: ''; position: absolute; top: -60px; right: -60px; width: 320px; height: 320px; background: var(--orange); opacity: 0.05; border-radius: 50%; }
+.cover-eyebrow { font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
+.cover-title { font-family: 'Sora', sans-serif; font-size: 38px; font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 12px; }
+.cover-sub { font-size: 15px; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 520px; margin-bottom: 36px; }
+.cover-ref { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.07); border: 0.5px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px 16px; }
+.cover-ref span { font-size: 13px; color: rgba(255,255,255,0.5); }
+.cover-ref strong { font-size: 13px; color: rgba(255,255,255,0.8); }
+
+/* SECTIONS */
+.section { padding: 64px 0 0; }
+.sec-tag { font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+.sec-title { font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 700; color: var(--navy); line-height: 1.2; }
+.sec-lead { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 28px; max-width: 720px; }
+.divider { width: 40px; height: 3px; background: var(--orange); margin: 10px 0 20px; }
+
+.dark-section { background: var(--navy); margin: 64px -40px 0; padding: 64px 40px; }
+
+/* LLC HEADER BADGE */
+.llc-badge { display: inline-flex; align-items: center; gap: 12px; background: var(--navy); border-radius: 10px; padding: 14px 20px; margin-bottom: 28px; }
+.llc-badge .num { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700; color: var(--orange); letter-spacing: 2px; }
+.llc-badge .name { font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 700; color: var(--white); }
+.llc-badge .status { background: var(--green); color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 10px; font-family: 'Sora', sans-serif; }
+
+/* CARDS */
+.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.card-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.card { background: var(--white); border-radius: 12px; padding: 24px 22px; border: 0.5px solid var(--border); }
+.card-title { font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+.card-body { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+.dark-card { background: var(--navy-mid); border-radius: 12px; padding: 24px 22px; border: 0.5px solid rgba(255,255,255,0.07); }
+.dark-card .card-title { color: var(--white); }
+.dark-card .card-body { color: rgba(255,255,255,0.48); }
+
+/* BOXES */
+.orange-box { background: var(--orange-lt); border-left: 4px solid var(--orange); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 20px 0; font-size: 14px; color: var(--navy); line-height: 1.7; }
+.green-box { background: var(--green-lt); border-left: 4px solid var(--green); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 20px 0; }
+.green-box .box-title { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 14px; color: var(--green); margin-bottom: 6px; }
+.green-box .box-body { font-size: 13px; color: #1A5C3A; line-height: 1.65; }
+.gold-box { background: var(--gold-lt); border: 1.5px solid var(--gold); border-radius: 10px; padding: 18px 22px; margin: 20px 0; }
+.gold-box .box-title { font-weight: 700; font-size: 14px; color: #7A5800; margin-bottom: 6px; font-family: 'Sora', sans-serif; }
+.gold-box .box-body { font-size: 13px; color: #8A6510; line-height: 1.65; }
+
+/* COMPARE */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.compare-bad { background: var(--red-lt); border: 1px solid #F0BEBE; border-radius: 12px; padding: 20px; }
+.compare-good { background: var(--green-lt); border: 1.5px solid var(--green); border-radius: 12px; padding: 20px; }
+.compare-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; font-family: 'Sora', sans-serif; }
+.compare-bad .compare-label { color: var(--red); }
+.compare-good .compare-label { color: var(--green); }
+.compare-h { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; margin-bottom: 12px; }
+.compare-bad .compare-h { color: var(--red); }
+.compare-good .compare-h { color: var(--green); }
+.compare-item { font-size: 13px; padding: 6px 0; border-bottom: 0.3px solid rgba(0,0,0,0.06); line-height: 1.55; }
+.compare-item:last-child { border-bottom: none; }
+.compare-bad .compare-item { color: var(--red-text); }
+.compare-good .compare-item { color: #1A5C3A; }
+
+/* STATS */
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0; }
+.stat-box { background: var(--white); border-radius: 12px; padding: 22px 16px; text-align: center; border: 0.5px solid var(--border); }
+.stat-val { font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 700; color: var(--orange); margin-bottom: 6px; line-height: 1; }
+.stat-lbl { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+/* MARKET INFO */
+.market-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 20px 0; }
+.market-item { background: var(--white); border-radius: 12px; padding: 20px; border: 0.5px solid var(--border); text-align: center; }
+.market-val { font-family: 'Sora', sans-serif; font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.market-lbl { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+/* SEPARATOR */
+.llc-separator { border: none; border-top: 2px solid var(--border); margin: 64px 0 0; }
+
+.footer { text-align: center; padding: 48px 0 32px; font-size: 12px; color: var(--text-muted); border-top: 0.5px solid var(--border); margin-top: 56px; }
+
+@media (max-width: 680px) {
+  .cover { padding: 36px 24px 44px; }
+  .cover-title { font-size: 28px; }
+  .card-grid, .card-grid-3, .compare-grid, .stats-row, .market-grid { grid-template-columns: 1fr; }
+  .page { padding: 0 20px 48px; }
+  .dark-section { margin: 64px -20px 0; padding: 52px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow">Documento de Suporte &middot; Abril 2026</div>
+  <div class="cover-title">Analise Detalhada<br>das LLCs Identificadas</div>
+  <div class="cover-sub">Analise de viabilidade, modelo de negocio, estrategia de entrada e contexto regulatorio dos dois primeiros negocios propostos para a Holding Corp.</div>
+  <div class="cover-ref">
+    <span>Documento principal:</span>
+    <strong>proposta_maruan_juninho.html</strong>
+  </div>
+</div>
+
+<div class="page">
+
+<!-- INTRO -->
+<div class="section">
+  <div class="sec-tag">Contexto</div>
+  <div class="sec-title">Como este documento se relaciona com a proposta principal</div>
+  <div class="divider"></div>
+  <div class="sec-lead">Este documento e um anexo tecnico da proposta principal. Ele nao substitui a proposta — complementa. O objetivo e detalhar a analise de viabilidade das duas primeiras LLCs ja identificadas, para que o Board da Holding tenha informacao suficiente para tomar decisoes fundamentadas sobre quais aprovar e em que ordem.</div>
+
+  <div class="card-grid">
+    <div class="card" style="border-left:3px solid var(--orange);">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+        <span style="background:var(--green); color:white; font-size:10px; font-weight:700; padding:3px 10px; border-radius:10px; font-family:'Sora',sans-serif;">VIAVEL</span>
+        <span style="font-family:'Sora',sans-serif; font-weight:600; color:var(--navy); font-size:14px;">LLC 01</span>
+      </div>
+      <div class="card-title">Monitores LED &mdash; Distribuicao B2B</div>
+      <div class="card-body">Mercado validado. Estrategia B2B definida. Modelo de distribuicao atacadista com vantagem competitiva de capital para importacao em volume.</div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--orange);">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+        <span style="background:var(--green); color:white; font-size:10px; font-weight:700; padding:3px 10px; border-radius:10px; font-family:'Sora',sans-serif;">VIAVEL</span>
+        <span style="font-family:'Sora',sans-serif; font-weight:600; color:var(--navy); font-size:14px;">LLC 02</span>
+      </div>
+      <div class="card-title">Solar + EV Charging</div>
+      <div class="card-body">Modelo regulatorio validado para a Florida. Expansao nacional via virtual net metering confirmada. Janela de incentivos fiscais expressivos com urgencia em 30 de junho.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- LLC 01: MONITORES LED -->
+<!-- ═══════════════════════════════════════ -->
+<hr class="llc-separator">
+
+<div class="section">
+  <div class="llc-badge">
+    <span class="num">LLC 01</span>
+    <span class="name">Monitores LED &mdash; Distribuicao B2B</span>
+    <span class="status">VIAVEL</span>
+  </div>
+
+  <div class="sec-tag">Contexto de mercado</div>
+  <div class="sec-title">O mercado existe, e maior do que parece</div>
+  <div class="divider"></div>
+  <div class="sec-lead">A Florida Central e um epicentro de demanda por solucoes visuais de alto impacto, impulsionada pela densidade de convencoes, hotelaria, varejo e entretenimento. O mercado americano de digital signage cresce a 7,2% ao ano.</div>
+
+  <div class="market-grid">
+    <div class="market-item">
+      <div class="market-val">$7,4 Bi</div>
+      <div class="market-lbl">Mercado americano de digital signage em 2025</div>
+    </div>
+    <div class="market-item">
+      <div class="market-val">7,2%</div>
+      <div class="market-lbl">CAGR projetado ate 2033 — crescimento estrutural</div>
+    </div>
+    <div class="market-item">
+      <div class="market-val">200+</div>
+      <div class="market-lbl">Eventos por ano em Orlando, incluindo 115 convencoes de grande porte</div>
+    </div>
+  </div>
+
+  <div class="sec-tag" style="margin-top:36px;">A estrategia</div>
+  <div class="sec-title">Por que distribuidor B2B e nao varejo</div>
+  <div class="divider"></div>
+  <div class="sec-lead">A maioria dos players entra no mercado vendendo diretamente para o consumidor final. Isso e um erro estrategico que o capital do Juninho nos permite evitar.</div>
+
+  <div class="compare-grid">
+    <div class="compare-bad">
+      <div class="compare-label">X Estrategia errada</div>
+      <div class="compare-h">Vender para o consumidor final</div>
+      <div class="compare-item">Concorrencia intensa e guerra de precos</div>
+      <div class="compare-item">Suporte pos-venda complexo e custoso</div>
+      <div class="compare-item">Margem espremida em cada venda</div>
+      <div class="compare-item">Dificil escalar sem estrutura enorme</div>
+      <div class="compare-item">Risco pos-venda direto com o cliente final</div>
+    </div>
+    <div class="compare-good">
+      <div class="compare-label">&#10003; A estrategia certa</div>
+      <div class="compare-h">Distribuidor e atacadista B2B</div>
+      <div class="compare-item">Relacoes comerciais continuas e de volume</div>
+      <div class="compare-item">Poucos concorrentes tem capital para este modelo</div>
+      <div class="compare-item">Margem previsivel e escalavel</div>
+      <div class="compare-item">Pós-venda e responsabilidade do instalador</div>
+      <div class="compare-item">Fundacao para a fabrica propria em 3 anos</div>
+    </div>
+  </div>
+
+  <div class="orange-box"><strong>A vantagem competitiva real:</strong> A capacidade de importar LED em volume significativo e o que separa um distribuidor serio de um revendedor. A maioria dos competidores nao tem capital para isso. O Juninho tem — e isso muda o jogo completamente.</div>
+
+  <div class="sec-tag" style="margin-top:36px;">Estrategia de entrada</div>
+  <div class="sec-title">Como comecamos sem precisar de estoque imediato</div>
+  <div class="divider"></div>
+  <div class="sec-lead">A estrategia de entrada usa a rede de contatos do mercado local para gerar visibilidade e abertura de portas antes mesmo da primeira importacao em volume.</div>
+
+  <div class="card-grid-3">
+    <div class="card">
+      <div class="card-title">Comodato em showrooms</div>
+      <div class="card-body">Monitores colocados em showrooms de moveis planejados e lojas de areas externas em troca de visibilidade. Custo de midia zero, acesso direto ao network de instaladores.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Foco em integradores AV</div>
+      <div class="card-body">Empresas de AV e sign companies sao os clientes ideais: compram em volume, conhecem o produto e tem clientes finais proprios. Sao o canal, nao o destino.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Network ja existente</div>
+      <div class="card-body">Arquitetos, designers de interiores e construtoras na rede de contatos do COO sao portas de entrada para projetos premium sem competicao de preco.</div>
+    </div>
+  </div>
+
+  <div class="orange-box"><strong>Visao de longo prazo:</strong> O objetivo de abrir uma fabrica de LED nos EUA em 3 anos e ambicioso e possivel. O caminho certo comeca sendo distribuidor: voce aprende o mercado por dentro, constroi relacoes com os compradores, e quando a fabrica abrir, ja tem os clientes esperando. Cada conta de distribuicao aberta hoje e um cliente da fabrica amanha.</div>
+
+  <div class="sec-tag" style="margin-top:36px;">Competicao</div>
+  <div class="sec-title">O mercado ja existe — e isso e bom</div>
+  <div class="divider"></div>
+  <div class="sec-lead">A existencia de competidores valida a demanda. O que nos diferencia nao e o produto em si, mas o posicionamento, o modelo B2B e a capacidade de importar em volume.</div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">Competidores em instalacao permanente</div>
+      <div class="card-body">Empresas como inTouch Display Systems, Crunchy Tech e SpeedPro Orlando vendem e instalam para o consumidor final. Sao os nossos potenciais clientes como distribuidores — nao nossos concorrentes diretos neste modelo.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Competidores em locacao de eventos</div>
+      <div class="card-body">GSE Audio Visual, 4Wall, Orlando Video Walls e similares focam no mercado de eventos. Sao competidores em um segmento que nao e nossa prioridade inicial — o que nos deixa o espaco de instalacoes permanentes B2B praticamente livre.</div>
+    </div>
+  </div>
+
+  <div class="green-box">
+    <div class="box-title">O caminho que nao devemos seguir</div>
+    <div class="box-body">Tentar competir no mercado de locacao de eventos ou venda direta ao consumidor final seria um erro estrategico. Esse segmento e dominado por players estabelecidos com frota propria, equipe de instalacao e relacionamentos de anos. Nosso diferencial e o capital para importar em volume e a capacidade de ser o fornecedor preferencial dos instaladores que ja existem.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- LLC 02: SOLAR + EV -->
+<!-- ═══════════════════════════════════════ -->
+<hr class="llc-separator">
+
+<div class="section">
+  <div class="llc-badge">
+    <span class="num">LLC 02</span>
+    <span class="name">Solar + EV Charging</span>
+    <span class="status">VIAVEL</span>
+  </div>
+
+  <div class="sec-tag">O modelo correto para a Florida</div>
+  <div class="sec-title">A ideia original e valida. O modelo muda — e fica melhor.</div>
+  <div class="divider"></div>
+  <div class="sec-lead">Pesquisamos a fundo a legislacao da Florida. A ideia de uma usina central que alimenta varias estacoes pela rede nao e permitida no estado. A boa noticia: o modelo correto e mais lucrativo do que o original.</div>
+
+  <div class="compare-grid">
+    <div class="compare-bad">
+      <div class="compare-label">X Nao funciona na Florida</div>
+      <div class="compare-h">Usina central + creditos remotos</div>
+      <div class="compare-item">Lei da Florida nao permite creditos entre medidores diferentes</div>
+      <div class="compare-item">Nao e possivel vender energia diretamente a terceiros</div>
+      <div class="compare-item">Modelo regulatorio bloqueia esta estrutura no estado</div>
+    </div>
+    <div class="compare-good">
+      <div class="compare-label">&#10003; Modelo correto na Florida</div>
+      <div class="compare-h">Solar integrado em cada ponto</div>
+      <div class="compare-item">Solar instalado no proprio local do carregador</div>
+      <div class="compare-item">Energia consumida antes de tocar na rede (behind-the-meter)</div>
+      <div class="compare-item">Custo de eletricidade praticamente zero</div>
+      <div class="compare-item">Cada ponto e um ativo independente que se valoriza</div>
+    </div>
+  </div>
+
+  <div class="green-box">
+    <div class="box-title">Por que o modelo da Florida e mais lucrativo do que parece?</div>
+    <div class="box-body">Ao instalar o solar diretamente em cada estacao de recarga, a energia tem custo proximo de zero — enquanto os concorrentes pagam entre $0,13 e $0,18 por kWh para a distribuidora. Isso significa que enquanto todos cobram o mesmo preco pelo carregamento, nossa margem e dramaticamente maior. Com parcerias com construtoras ja na fase de obra, instalamos os carregadores e os paineis de uma vez, minimizando custo e maximizando retorno desde o primeiro dia.</div>
+  </div>
+
+  <div class="orange-box"><strong>A visao de expansao: outros estados permitem a usina central.</strong> A restricao e da Florida, nao do pais. Em mais de 40 estados americanos, incluindo New Jersey, Massachusetts, New York, Maryland e Connecticut, existe o chamado virtual net metering: uma usina solar central pode gerar creditos de energia distribuidos para multiplos pontos de consumo em locais diferentes. Isso significa que, em uma segunda fase, a LLC pode instalar usinas em outros estados e operar redes de carregadores alimentadas por uma unica fonte. Comecamos aqui, provamos o negocio, e expandimos para outros estados com o modelo de usina centralizada. A ideia original funciona — so nao e na Florida para comecar.</div>
+
+  <div class="card-grid" style="margin-top:20px;">
+    <div class="card" style="border-left:3px solid var(--green);">
+      <div class="card-title">Fase 1: Florida (behind-the-meter)</div>
+      <div class="card-body">Solar integrado em cada ponto de recarga. Energia consumida localmente. Custo operacional minimo, margens maximas. Construimos os primeiros ativos e aprendemos o mercado.</div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--orange);">
+      <div class="card-title">Fase 2: Expansao nacional (usina central)</div>
+      <div class="card-body">Usinas solares centrais em New Jersey, New York, Massachusetts, Maryland, Connecticut e outros 40 estados. Uma usina alimenta toda uma rede de carregadores via virtual net metering.</div>
+    </div>
+  </div>
+
+  <div class="sec-tag" style="margin-top:36px;">Estrategia de parceria</div>
+  <div class="sec-title">Construtoras como canal de entrada</div>
+  <div class="divider"></div>
+  <div class="sec-lead">A Florida Central vive uma das maiores expansoes de construcao civil dos EUA. Integrar os carregadores e os paineis solares ainda na fase de obra e a estrategia mais eficiente e de menor custo.</div>
+
+  <div class="card-grid-3">
+    <div class="card">
+      <div class="card-title">Condominios residenciais</div>
+      <div class="card-body">Instalacao integrada na fase de obra. Diferencial competitivo para o empreendedor. Custo de instalacao minimo. Receita recorrente por carregamento.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Estacionamentos comerciais</div>
+      <div class="card-body">Shoppings, aeroportos, hoteis e escritorios buscam ativamente infraestrutura de EV. O modelo solar reduz o custo operacional do proprietario do espaco.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Rede de parceiros instaladores</div>
+      <div class="card-body">A LLC nao precisa ser a instaladora. Parceiros locais certificados executam a instalacao. A LLC e a operadora e dona dos equipamentos.</div>
+    </div>
+  </div>
+</div>
+
+<!-- INCENTIVOS FISCAIS -->
+</div><!-- end page -->
+<div class="dark-section">
+<div class="page" style="padding-top:0;">
+  <div class="sec-tag" style="color:var(--orange);">Urgencia critica &middot; LLC 02</div>
+  <div class="sec-title" style="color:var(--white);">Incentivos fiscais excepcionais. Um deles expira em 30 de junho.</div>
+  <div class="divider"></div>
+  <div class="sec-lead" style="color:rgba(255,255,255,0.5);">Como empresa (nao pessoa fisica), os beneficios fiscais neste negocio sao excepcionais. E existe uma janela que se fecha em menos de 65 dias — e nao volta.</div>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-val">30%</div>
+      <div class="stat-lbl">Credito fiscal federal sobre instalacoes solares comerciais (ITC Section 48E), valido ate 2027</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val">100%</div>
+      <div class="stat-lbl">Depreciacao acelerada no primeiro ano do ativo, reduz imposto imediatamente no ano 1</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val">$100K</div>
+      <div class="stat-lbl">Credito fiscal por ponto de recarga instalado (Secao 30C). Expira em 30 de junho de 2026</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val">~40%</div>
+      <div class="stat-lbl">Reducao no custo efetivo de um projeto de $1M apos todos os incentivos no ano 1</div>
+    </div>
+  </div>
+
+  <div class="gold-box">
+    <div class="box-title">Prazo critico: 30 de junho de 2026 (menos de 65 dias)</div>
+    <div class="box-body">O credito fiscal de ate $100.000 por ponto de recarga instalado expira oficialmente em 30 de junho de 2026. Para capturar este beneficio, as instalacoes precisam ser iniciadas antes desta data. Este incentivo nao volta. Em um projeto com 5 pontos de recarga, por exemplo, isso representa ate $500.000 de credito fiscal — dinheiro que vem diretamente do imposto que a empresa pagaria. Agir agora nao e apenas oportunidade. E protecao financeira.</div>
+  </div>
+
+  <div class="card-grid" style="margin-top:8px;">
+    <div class="dark-card">
+      <div class="card-title">O que acontece se agirmos antes de 30 de junho</div>
+      <div class="card-body">Capturamos ate $100.000 de credito fiscal por ponto de recarga. Aproveitamos a depreciacao de 100% no ano 1. O custo efetivo do projeto cai aproximadamente 40%. Os primeiros pontos comecam a gerar receita enquanto o beneficio fiscal reduz o imposto do ano.</div>
+    </div>
+    <div class="dark-card">
+      <div class="card-title">O que acontece se esperarmos apos 30 de junho</div>
+      <div class="card-body">O credito de $100.000 por ponto desaparece permanentemente. O ITC solar (30%) ainda estara disponivel ate 2027, mas o credito de EV charging e perdido. Em um projeto de 5 pontos, isso representa $500.000 de beneficio que nao voltara.</div>
+    </div>
+  </div>
+</div>
+</div><!-- end dark section -->
+
+<div class="page">
+
+<!-- CONCLUSAO -->
+<div class="section">
+  <div class="sec-tag">Conclusao</div>
+  <div class="sec-title">Dois negocios validados. Uma decisao a tomar.</div>
+  <div class="divider"></div>
+  <div class="sec-lead">Ambas as LLCs foram analisadas em profundidade e validadas como viaveis. A decisao sobre qual priorizar, em que ordem e com qual estrutura de investimento cabe ao Board da Holding — com base nos dados apresentados aqui e nos detalhes da proposta principal.</div>
+
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid var(--orange);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+        <div class="card-title" style="margin-bottom:0;">LLC 01 &mdash; Monitores LED</div>
+        <span style="background:#E6F5EE; color:var(--green); font-size:10px; font-weight:700; padding:3px 10px; border-radius:10px; font-family:'Sora',sans-serif; flex-shrink:0; margin-left:8px;">SEM URGENCIA</span>
+      </div>
+      <div class="card-body">Mercado validado, estrategia definida, modelo B2B com vantagem competitiva de capital. Pode ser iniciada em qualquer momento apos a constituicao da Holding Corp.</div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--gold);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+        <div class="card-title" style="margin-bottom:0;">LLC 02 &mdash; Solar + EV</div>
+        <span style="background:var(--gold-lt); color:var(--gold); font-size:10px; font-weight:700; padding:3px 10px; border-radius:10px; font-family:'Sora',sans-serif; border:1px solid var(--gold); flex-shrink:0; margin-left:8px;">URGENTE: 30 JUN</span>
+      </div>
+      <div class="card-body">Modelo validado, incentivos fiscais expressivos confirmados. A janela do credito de $100.000 por ponto fecha em 30 de junho. Esta LLC tem prioridade de timing.</div>
+    </div>
+  </div>
+
+  <div class="orange-box" style="margin-top:24px;"><strong>Proxima acao recomendada:</strong> Retornar ao documento principal (proposta_maruan_juninho.html) para avancar com os proximos passos: constituicao da Holding Corp, formalizacao do contrato do COO e inicio das instalacoes de EV Charging antes de 30 de junho.</div>
+</div>
+
+<div class="footer">
+  <p>Analise preparada por Maruan Barakat &nbsp;&middot;&nbsp; Documento de Suporte &nbsp;&middot;&nbsp; Abril 2026</p>
+  <p style="margin-top:6px;">Confidencial &mdash; uso exclusivo dos socios do grupo</p>
+</div>
+
+</div><!-- end page -->
+</body>
+</html>
