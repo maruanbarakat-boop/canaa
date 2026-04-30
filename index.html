@@ -3,152 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proposta — Juninho Holding Corp</title>
+<title>Juninho Holding Corp</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@400;500&display=swap');
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --navy: #0D1B2A; --navy-mid: #1A2E42; --navy-light: #253D55;
-  --orange: #E8642A; --cream: #F5F2EB;
-  --white: #FFFFFF; --text-dark: #0D1B2A; --text-muted: #5A7A8A;
-  --gold: #C9952A; --gold-lt: #FFF8E6;
-  --green: #1D7A4A; --green-lt: #E6F5EE;
-  --orange-lt: #FEF0E8; --border: #E0DDD5;
-  --red-lt: #FFF1F1; --red: #C0392B; --red-text: #7A2020;
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D1B2A;--navy2:#1A2E42;--navy3:#243850;
+  --orange:#E8642A;--orange-lt:#FEF0E8;
+  --cream:#F5F2EB;--white:#FFFFFF;
+  --muted:#5A7A8A;--border:#E0DDD5;
+  --green:#1D7A4A;--green-lt:#E6F5EE;
+  --purple:#534AB7;--purple-lt:#EEEDFE;
+  --gold:#C9952A;--gold-lt:#FFF8E6;
 }
-body { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text-dark); background: var(--cream); line-height: 1.6; }
-.page { max-width: 940px; margin: 0 auto; padding: 0 40px 60px; }
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--navy);line-height:1.5}
+.page{max-width:980px;margin:0 auto;padding:0 44px 80px}
 
 /* COVER */
-.cover { background: var(--navy); min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 72px; position: relative; overflow: hidden; }
-.cover::before { content: ''; position: absolute; top: -80px; right: -80px; width: 440px; height: 440px; background: var(--orange); opacity: 0.06; border-radius: 50%; }
-.cover::after { content: ''; position: absolute; bottom: -60px; left: -60px; width: 280px; height: 280px; background: var(--orange); opacity: 0.03; border-radius: 50%; }
-.cover-tag { font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 24px; }
-.cover-title { font-family: 'Sora', sans-serif; font-size: 54px; font-weight: 700; color: var(--white); line-height: 1.05; }
-.cover-title .accent { color: var(--orange); }
-.cover-sub { font-size: 17px; color: rgba(255,255,255,0.48); line-height: 1.75; max-width: 500px; margin: 16px 0 52px; }
-.cover-author { display: flex; align-items: center; gap: 14px; }
-.avatar-o { width: 50px; height: 50px; border-radius: 50%; background: var(--orange); display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; color: white; flex-shrink: 0; }
-.cover-name { font-family: 'Sora', sans-serif; font-weight: 600; color: var(--white); font-size: 16px; }
-.cover-role { color: rgba(255,255,255,0.38); font-size: 12.5px; margin-top: 3px; }
+.cover{background:var(--navy);min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:80px;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:var(--orange);opacity:.05;border-radius:50%}
+.cover::after{content:'';position:absolute;bottom:-80px;left:300px;width:300px;height:300px;background:var(--orange);opacity:.03;border-radius:50%}
+.cover-eyebrow{font-family:'Sora',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:24px}
+.cover-title{font-family:'Sora',sans-serif;font-size:60px;font-weight:700;color:var(--white);line-height:1.0;margin-bottom:20px}
+.cover-title .accent{color:var(--orange)}
+.cover-tagline{font-size:18px;color:rgba(255,255,255,.45);max-width:480px;line-height:1.7;margin-bottom:60px}
+.cover-author{display:flex;align-items:center;gap:14px}
+.av{width:52px;height:52px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:16px;color:#fff;flex-shrink:0}
+.cover-name{font-family:'Sora',sans-serif;font-weight:600;color:#fff;font-size:16px}
+.cover-role{color:rgba(255,255,255,.35);font-size:12px;margin-top:3px}
 
-/* SECTIONS */
-.section { padding: 68px 0 0; }
-.sec-tag { font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
-.sec-title { font-family: 'Sora', sans-serif; font-size: 30px; font-weight: 700; color: var(--navy); line-height: 1.2; }
-.sec-title-w { font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 700; color: var(--white); line-height: 1.2; }
-.sec-lead { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 32px; max-width: 720px; }
-.sec-lead-w { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 32px; }
-.divider { width: 40px; height: 3px; background: var(--orange); margin: 10px 0 22px; }
+/* SECTION */
+.section{padding:80px 0 0}
+.sec-tag{font-family:'Sora',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.sec-title{font-family:'Sora',sans-serif;font-size:32px;font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:6px}
+.sec-title-w{font-family:'Sora',sans-serif;font-size:28px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:6px}
+.sec-sub{font-size:16px;color:var(--muted);line-height:1.7;max-width:660px;margin-bottom:32px}
+.divider{width:40px;height:3px;background:var(--orange);margin:8px 0 20px}
 
-.dark-section { background: var(--navy); margin: 68px -40px 0; padding: 68px 40px; }
+/* DARK BAND */
+.dark-band{background:var(--navy);margin:80px -44px 0;padding:80px 44px}
 
-/* CARDS */
-.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.card-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
-.card { background: var(--white); border-radius: 12px; padding: 24px 22px; border: 0.5px solid var(--border); }
-.card-num { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--orange); margin-bottom: 8px; font-family: 'Sora', sans-serif; }
-.card-title { font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
-.card-body { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
-.dark-card { background: var(--navy-mid); border-radius: 12px; padding: 24px 22px; border: 0.5px solid rgba(255,255,255,0.07); }
-.dark-card .card-title { color: var(--white); }
-.dark-card .card-body { color: rgba(255,255,255,0.48); }
+/* DIAGRAM CONTAINERS */
+.diagram-wrap{background:#fff;border-radius:16px;padding:32px;border:.5px solid var(--border);margin:24px 0;overflow:hidden}
+.diagram-wrap svg{display:block;width:100%}
 
-/* BOXES */
-.orange-box { background: var(--orange-lt); border-left: 4px solid var(--orange); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 22px 0; font-size: 14px; color: var(--navy); line-height: 1.7; }
-.green-box { background: var(--green-lt); border-left: 4px solid var(--green); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 22px 0; }
-.green-box .box-title { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 14px; color: var(--green); margin-bottom: 6px; }
-.green-box .box-body { font-size: 13px; color: #1A5C3A; line-height: 1.65; }
-.gold-box { background: var(--gold-lt); border: 1.5px solid var(--gold); border-radius: 10px; padding: 18px 22px; margin: 22px 0; }
-.gold-box .box-title { font-weight: 700; font-size: 14px; color: #7A5800; margin-bottom: 6px; font-family: 'Sora', sans-serif; }
-.gold-box .box-body { font-size: 13px; color: #8A6510; line-height: 1.65; }
+/* CAPTION ROW */
+.caption-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:20px}
+.caption-item{text-align:center}
+.caption-dot{width:12px;height:12px;border-radius:50%;margin:0 auto 6px;display:block}
+.caption-label{font-size:12px;color:var(--muted);line-height:1.4}
 
-/* HOLDING FLOW */
-.holding-flow { display: flex; align-items: stretch; gap: 0; margin: 32px 0; }
-.flow-node { flex: 1; background: var(--white); border: 0.5px solid var(--border); border-radius: 12px; padding: 24px 16px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
-.flow-node.primary { background: var(--navy); border-color: var(--navy); }
-.flow-node.accent-node { background: var(--orange-lt); border: 1.5px solid var(--orange); }
-.flow-icon { font-size: 28px; }
-.flow-lbl { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; color: var(--navy); }
-.flow-node.primary .flow-lbl { color: var(--white); }
-.flow-sub { font-size: 11.5px; color: var(--text-muted); line-height: 1.5; }
-.flow-node.primary .flow-sub { color: rgba(255,255,255,0.45); }
-.flow-arr { width: 44px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--orange); font-size: 22px; font-weight: 700; }
+/* ROLE PILLS */
+.role-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:24px 0}
+.role-card{background:#fff;border-radius:12px;padding:24px 20px;border:.5px solid var(--border);text-align:center}
+.role-avatar{width:56px;height:56px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:18px;color:#fff}
+.role-name{font-family:'Sora',sans-serif;font-weight:700;font-size:15px;color:var(--navy);margin-bottom:4px}
+.role-title{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;font-family:'Sora',sans-serif}
+.role-desc{font-size:12.5px;color:var(--muted);line-height:1.6}
 
-/* BIG STATEMENT */
-.statement { background: var(--navy); border-radius: 16px; padding: 44px 52px; margin: 32px 0; text-align: center; }
-.statement p { font-family: 'Sora', sans-serif; font-size: 23px; font-weight: 700; color: var(--white); line-height: 1.45; }
-.statement p .accent { color: var(--orange); }
-.statement .sub { font-size: 14px; color: rgba(255,255,255,0.38); margin-top: 14px; }
-
-/* STEPS */
-.step { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 0.5px solid var(--border); }
-.step:last-child { border-bottom: none; }
-.step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--navy); color: white; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
-.step-title { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 14.5px; color: var(--navy); margin-bottom: 5px; }
-.step-body { font-size: 13.5px; color: var(--text-muted); line-height: 1.65; }
-
-/* COMPARE */
-.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
-.compare-bad { background: var(--red-lt); border: 1px solid #F0BEBE; border-radius: 12px; padding: 20px; }
-.compare-good { background: var(--green-lt); border: 1.5px solid var(--green); border-radius: 12px; padding: 20px; }
-.compare-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; font-family: 'Sora', sans-serif; }
-.compare-bad .compare-label { color: var(--red); }
-.compare-good .compare-label { color: var(--green); }
-.compare-h { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; margin-bottom: 12px; }
-.compare-bad .compare-h { color: var(--red); }
-.compare-good .compare-h { color: var(--green); }
-.compare-item { font-size: 13px; padding: 6px 0; border-bottom: 0.3px solid rgba(0,0,0,0.06); line-height: 1.55; }
-.compare-item:last-child { border-bottom: none; }
-.compare-bad .compare-item { color: var(--red-text); }
-.compare-good .compare-item { color: #1A5C3A; }
-
-/* STATS */
-.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 28px 0; }
-.stat-box { background: var(--white); border-radius: 12px; padding: 22px 16px; text-align: center; border: 0.5px solid var(--border); }
-.stat-val { font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 700; color: var(--orange); margin-bottom: 6px; line-height: 1; }
-.stat-lbl { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
-
-/* COMPENSATION */
-.comp-card { background: var(--navy); border-radius: 14px; padding: 36px; margin: 24px 0; }
-.comp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 0.5px solid rgba(255,255,255,0.1); flex-wrap: wrap; gap: 10px; }
-.comp-title { font-family: 'Sora', sans-serif; font-size: 18px; font-weight: 700; color: var(--white); }
-.comp-badge { background: var(--orange); color: white; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; font-family: 'Sora', sans-serif; }
-.comp-row { display: flex; justify-content: space-between; align-items: center; padding: 13px 0; border-bottom: 0.5px solid rgba(255,255,255,0.07); flex-wrap: wrap; gap: 6px; }
-.comp-row:last-child { border-bottom: none; }
-.comp-lbl { font-size: 13px; color: rgba(255,255,255,0.5); }
-.comp-val { font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: var(--white); text-align: right; }
-.comp-val.accent { font-size: 20px; color: var(--orange); }
+/* COMP CARD */
+.comp-dark{background:var(--navy);border-radius:14px;padding:36px;margin:24px 0}
+.comp-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:.5px solid rgba(255,255,255,.07);flex-wrap:wrap;gap:8px}
+.comp-row:last-child{border-bottom:none}
+.comp-lbl{font-size:13px;color:rgba(255,255,255,.45)}
+.comp-val{font-family:'Sora',sans-serif;font-size:14px;font-weight:600;color:#fff;text-align:right}
+.comp-val.big{font-size:22px;color:var(--orange)}
 
 /* NEXT STEPS */
-.next-band { background: var(--navy); border-radius: 14px; padding: 36px; margin: 28px 0; }
-.next-title { font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
-.next-sub { font-size: 13px; color: rgba(255,255,255,0.38); margin-bottom: 24px; }
-.next-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 0.5px solid rgba(255,255,255,0.07); }
-.next-item:last-child { border-bottom: none; }
-.next-check { width: 24px; height: 24px; border-radius: 6px; background: var(--orange); display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; flex-shrink: 0; font-weight: 700; font-family: 'Sora', sans-serif; margin-top: 2px; }
-.next-text { font-size: 13.5px; color: rgba(255,255,255,0.62); line-height: 1.65; }
-.next-text b { color: white; font-weight: 500; }
+.steps-dark{background:var(--navy);border-radius:14px;padding:36px;margin:24px 0}
+.step-item{display:flex;gap:14px;padding:12px 0;border-bottom:.5px solid rgba(255,255,255,.07);align-items:flex-start}
+.step-item:last-child{border-bottom:none}
+.step-num{width:26px;height:26px;border-radius:6px;background:var(--orange);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;font-family:'Sora',sans-serif;margin-top:2px}
+.step-text{font-size:13.5px;color:rgba(255,255,255,.65);line-height:1.6}
+.step-text b{color:#fff;font-weight:500}
 
-/* CHICO CARD */
-.chico-card { background: var(--white); border-radius: 12px; padding: 22px; border: 0.5px solid var(--border); display: flex; gap: 16px; align-items: flex-start; margin-top: 28px; }
-.avatar-n { width: 42px; height: 42px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14px; color: white; flex-shrink: 0; }
+/* STATEMENT */
+.statement{background:var(--navy);border-radius:14px;padding:40px 48px;margin:28px 0;text-align:center}
+.statement p{font-family:'Sora',sans-serif;font-size:22px;font-weight:700;color:#fff;line-height:1.5}
+.statement .accent{color:var(--orange)}
 
-/* ORG CHART */
-.org-wrap { margin: 28px 0; background: var(--white); border-radius: 16px; padding: 32px 24px 24px; border: 0.5px solid var(--border); overflow: hidden; }
-.org-title { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); letter-spacing: 2px; margin-bottom: 20px; text-align: center; text-transform: uppercase; }
+/* FOOTER */
+.footer{text-align:center;padding:48px 0 32px;font-size:12px;color:var(--muted);border-top:.5px solid var(--border);margin-top:64px}
 
-.footer { text-align: center; padding: 48px 0 32px; font-size: 12px; color: var(--text-muted); border-top: 0.5px solid var(--border); margin-top: 56px; }
+/* ANALYSIS LINK BOX */
+.analysis-box{display:flex;align-items:center;justify-content:space-between;background:var(--navy);border-radius:12px;padding:22px 28px;margin:28px 0;gap:20px;flex-wrap:wrap}
+.analysis-text{font-size:14px;color:rgba(255,255,255,.55);line-height:1.6;flex:1;min-width:200px}
+.analysis-btn{background:var(--orange);color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;padding:12px 24px;border-radius:10px;text-decoration:none;white-space:nowrap;flex-shrink:0}
 
-@media (max-width: 680px) {
-  .cover { padding: 44px 28px 56px; }
-  .cover-title { font-size: 36px; }
-  .card-grid, .card-grid-3, .compare-grid, .stats-row { grid-template-columns: 1fr; }
-  .page { padding: 0 20px 48px; }
-  .dark-section { margin: 68px -20px 0; padding: 56px 20px; }
-  .holding-flow { flex-direction: column; }
-  .statement { padding: 32px 24px; }
-  .statement p { font-size: 18px; }
+@media(max-width:680px){
+  .cover{padding:48px 28px}
+  .cover-title{font-size:38px}
+  .page{padding:0 20px 60px}
+  .dark-band{margin:80px -20px 0;padding:60px 20px}
+  .role-grid{grid-template-columns:1fr}
+  .statement{padding:28px 24px}
+  .statement p{font-size:17px}
 }
 </style>
 </head>
@@ -156,429 +105,619 @@ body { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text-dark
 
 <!-- COVER -->
 <div class="cover">
-  <div class="cover-tag">Proposta Executiva &middot; Abril 2026</div>
-  <div class="cover-title">
-    Sua plataforma de<br>negocios nos <span class="accent">EUA.</span><br>Estruturada para crescer.
-  </div>
-  <div class="cover-sub">Uma Holding Corp americana que gera negocios, atrai investidores e multiplica o seu capital com estrutura profissional, gestao dedicada e transparencia total.</div>
+  <div class="cover-eyebrow">Proposta Executiva &middot; Abril 2026</div>
+  <div class="cover-title">Uma plataforma<br>para <span class="accent">multiplicar</span><br>negocios nos EUA.</div>
+  <div class="cover-tagline">Como estruturar uma Holding Corp americana que identifica oportunidades, atrai capital do Brasil e gera retorno escalavel.</div>
   <div class="cover-author">
-    <div class="avatar-o">MB</div>
+    <div class="av">MB</div>
     <div>
       <div class="cover-name">Maruan Barakat</div>
-      <div class="cover-role">COO Proposto &middot; Cidadao Americano &middot; Central Florida, USA</div>
+      <div class="cover-role">COO Proposto &middot; Cidadao Americano &middot; Central Florida</div>
     </div>
   </div>
 </div>
 
 <div class="page">
 
-<!-- A GRANDE IDEIA -->
+<!-- ═══════ SECTION 1: THE CONCEPT ═══════ -->
 <div class="section">
-  <div class="sec-tag">A grande ideia</div>
-  <div class="sec-title">Nao e apenas mais um negocio. E uma plataforma.</div>
+  <div class="sec-tag">O conceito</div>
+  <div class="sec-title">Nao um negocio. Uma plataforma.</div>
   <div class="divider"></div>
-  <div class="sec-lead">A proposta que apresento nao e para voce entrar em um negocio especifico. E para voce criar a estrutura que vai gerar, gerir e multiplicar negocios nos EUA de forma profissional, escalavel e protegida.</div>
+  <div class="sec-sub">Um investimento cria a estrutura. A estrutura gera multiplos negocios. Cada negocio retorna para voce — com risco isolado.</div>
 
-  <div class="statement">
-    <p>Uma <span class="accent">Holding Corp</span> americana e a diferenca entre ser dono de um negocio e ser dono de uma plataforma que gera negocios.</p>
-    <div class="sub">Um investimento inicial. Uma estrutura permanente. Multiplos retornos.</div>
-  </div>
-
-  <div class="holding-flow">
-    <div class="flow-node">
-      <div class="flow-icon">&#127463;&#127479;</div>
-      <div class="flow-lbl">Juninho investe</div>
-      <div class="flow-sub">Capital inicial para estruturar a Holding Corp</div>
-    </div>
-    <div class="flow-arr">&#8594;</div>
-    <div class="flow-node primary">
-      <div style="font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--orange); font-family:'Sora',sans-serif; margin-bottom:4px;">O nucleo</div>
-      <div class="flow-lbl">Holding Corp</div>
-      <div class="flow-sub">Estrutura, gere e expande cada LLC</div>
-    </div>
-    <div class="flow-arr">&#8594;</div>
-    <div class="flow-node">
-      <div class="flow-icon">&#128200;</div>
-      <div class="flow-lbl">LLCs operacionais</div>
-      <div class="flow-sub">Cada negocio em entidade independente</div>
-    </div>
-    <div class="flow-arr">&#8594;</div>
-    <div class="flow-node accent-node">
-      <div class="flow-icon">&#128176;</div>
-      <div class="flow-lbl">Retorno ao Juninho</div>
-      <div class="flow-sub">Dividendos da Corp + participacao nas LLCs</div>
-    </div>
-  </div>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="card-num">Corp, nao LLC</div>
-      <div class="card-title">Por que uma Corporation e nao uma LLC?</div>
-      <div class="card-body">A Corp tem Board of Directors formal, pode emitir acoes para investidores, tem governance corporativa reconhecida internacionalmente e e a estrutura ideal para uma holding que vai captar capital e expandir. As LLCs operacionais serao as subsidiarias — cada negocio na sua propria entidade protegida.</div>
-    </div>
-    <div class="card">
-      <div class="card-num">Como a Corp ganha dinheiro</div>
-      <div class="card-title">Management Fee: a receita recorrente da Holding</div>
-      <div class="card-body">Cada LLC gerida pela Holding paga um Management Fee percentual. Esse fee e a receita operacional da Corp: cobre os custos da Holding e gera lucro distribuivel aos socios. Juninho ganha em duas frentes: como acionista da Corp e como possivel socio direto de cada LLC.</div>
-    </div>
-  </div>
-</div>
-
-<!-- POR QUE INVESTIR PRIMEIRO -->
-<div class="section">
-  <div class="sec-tag">O argumento mais importante</div>
-  <div class="sec-title">Por que investir primeiro na criacao da Holding?</div>
-  <div class="divider"></div>
-  <div class="sec-lead">Antes de qualquer negocio especifico, a Holding precisa existir. Ela e a base de tudo. Sem ela, cada negocio e um projeto isolado. Com ela, cada novo negocio se torna parte de um portfolio estruturado que voce controla.</div>
-
-  <div class="compare-grid">
-    <div class="compare-bad">
-      <div class="compare-label">X Sem a Holding</div>
-      <div class="compare-h">Negocios isolados</div>
-      <div class="compare-item">Cada negocio e uma aventura separada</div>
-      <div class="compare-item">Sem governance ou estrutura formal</div>
-      <div class="compare-item">Risco de um negocio contaminar o outro</div>
-      <div class="compare-item">Dificil atrair investidores externos</div>
-      <div class="compare-item">Sem veiculo profissional nos EUA</div>
-    </div>
-    <div class="compare-good">
-      <div class="compare-label">&#10003; Com a Holding Corp</div>
-      <div class="compare-h">Uma plataforma de negocios</div>
-      <div class="compare-item">Portfolio de LLCs gerido profissionalmente</div>
-      <div class="compare-item">Governance corporativa americana formal</div>
-      <div class="compare-item">Isolamento total de risco entre LLCs</div>
-      <div class="compare-item">Estrutura pronta para receber investidores</div>
-      <div class="compare-item">Corp americana com Board e acionistas</div>
-    </div>
-  </div>
-
-  <div class="card-grid-3" style="margin-top:8px;">
-    <div class="card">
-      <div class="card-num">Isolamento de risco</div>
-      <div class="card-title">Um negocio nao afeta o outro</div>
-      <div class="card-body">Cada LLC e uma entidade separada. Se um negocio enfrentar dificuldades, os outros nao sao atingidos. O patrimonio do Juninho na Corp permanece protegido.</div>
-    </div>
-    <div class="card">
-      <div class="card-num">Governanca formal</div>
-      <div class="card-title">Board com autoridade clara</div>
-      <div class="card-body">Todo investimento precisa de aprovacao formal do Board. Isso protege o Juninho, cria registro legal de cada decisao e profissionaliza a gestao do portfolio.</div>
-    </div>
-    <div class="card">
-      <div class="card-num">Escalabilidade</div>
-      <div class="card-title">Uma estrutura, infinitos negocios</div>
-      <div class="card-body">Nova oportunidade identificada? Cria-se uma nova LLC sob a Holding. A estrutura de governance, juridico e gestao ja existe. O custo marginal de adicionar um negocio e dramaticamente menor.</div>
-    </div>
-  </div>
-
-  <div class="orange-box"><strong>O investimento inicial cria a infraestrutura permanente.</strong> Os negocios vem depois — e cada um deles retorna capital para a Holding, que distribui para os acionistas. O Juninho nao esta comprando um negocio. Esta construindo a plataforma que vai gerar negocios para sempre.</div>
-</div>
-
-</div><!-- end page -->
-
-<!-- DARK SECTION: INVESTIDORES BRASILEIROS -->
-<div class="dark-section">
-<div class="page" style="padding-top:0;">
-  <div class="sec-tag">O ativo mais valioso</div>
-  <div class="sec-title-w">Voce tem o que investidores brasileiros nao tem: uma Corp americana pronta.</div>
-  <div class="divider"></div>
-  <div class="sec-lead-w">Com a Holding Corp estruturada, o Juninho nao leva mais apenas uma ideia de negocio para seus contatos no Brasil. Ele leva um veiculo profissional americano, com governance formal, gestao dedicada e oportunidades reais de retorno em dolares.</div>
-
-  <div class="statement" style="background:var(--navy-mid); margin-bottom:28px;">
-    <p>Voce para de ser o Juninho que quer abrir um negocio nos EUA. Voce vira o <span class="accent">Juninho que opera uma Holding Corp americana</span> — e esta abrindo espaco para investidores selecionados.</p>
-  </div>
-
-  <div class="card-grid">
-    <div class="dark-card">
-      <div class="card-num" style="color:var(--orange);">O contexto</div>
-      <div class="card-title">Brasileiros querem investir nos EUA</div>
-      <div class="card-body">A demanda por investimentos em dolares nunca foi tao alta no Brasil. Porem, a maioria dos investidores nao sabe como estruturar uma entrada nos EUA de forma segura, legal e profissional. Voce tera exatamente isso pronto para oferecer.</div>
-    </div>
-    <div class="dark-card">
-      <div class="card-num" style="color:var(--orange);">O que voce oferece</div>
-      <div class="card-title">Uma LLC por oportunidade, com gestao incluida</div>
-      <div class="card-body">Cada negocio que a Holding estruturar pode ter investidores externos como socios da LLC especifica. O investidor entra com capital, a Holding entra com gestao e operacao. O Management Fee cobre os custos. O lucro e dividido conforme os termos acordados.</div>
-    </div>
-    <div class="dark-card">
-      <div class="card-num" style="color:var(--orange);">O papel do Juninho</div>
-      <div class="card-title">Chairman e conector de capital</div>
-      <div class="card-body">Como Chairman do Board e Socio Majoritario da Corp, Juninho controla quais investidores entram e em quais LLCs. Ele tem controle total sobre quem participa do seu portfolio americano — e ganha como acionista em cada negocio estruturado.</div>
-    </div>
-    <div class="dark-card">
-      <div class="card-num" style="color:var(--orange);">O resultado</div>
-      <div class="card-title">Uma holding privada para o mercado americano</div>
-      <div class="card-body">Com o tempo, a Holding Corp vira a estrutura atraves da qual o Juninho e seus parceiros investem em oportunidades nos EUA de forma organizada, protegida e lucrativa. Cada negocio bem-sucedido valoriza o portfolio da Corp.</div>
-    </div>
-  </div>
-
-  <!-- Radar section -->
-  <div style="margin-top:28px; padding:22px 24px; background:rgba(255,255,255,0.04); border-radius:12px; border:1px dashed rgba(255,255,255,0.12);">
-    <div class="sec-tag" style="margin-bottom:14px;">No Radar &middot; Primeiras oportunidades identificadas</div>
-    <div class="card-grid">
-      <div style="background:rgba(255,255,255,0.06); border-radius:10px; padding:18px 20px; border:0.5px solid rgba(255,255,255,0.1);">
-        <div class="card-title" style="color:rgba(255,255,255,0.75); margin-bottom:6px;">Monitores LED &mdash; Distribuicao B2B</div>
-        <div class="card-body" style="color:rgba(255,255,255,0.4);">Importacao e distribuicao atacadista para empresas instaladoras na Florida. Modelo validado com capital disponivel para importar em volume.</div>
-      </div>
-      <div style="background:rgba(255,255,255,0.06); border-radius:10px; padding:18px 20px; border:0.5px solid rgba(255,255,255,0.1);">
-        <div class="card-title" style="color:rgba(255,255,255,0.75); margin-bottom:6px;">Solar + EV Charging</div>
-        <div class="card-body" style="color:rgba(255,255,255,0.4);">Estacoes de recarga com energia solar integrada. Incentivos fiscais expressivos com prazo ate 30 de junho de 2026.</div>
-      </div>
-      <div style="background:rgba(255,255,255,0.03); border-radius:10px; padding:18px 20px; border:0.5px dashed rgba(255,255,255,0.08);">
-        <div class="card-title" style="color:rgba(255,255,255,0.45); margin-bottom:6px;">Importacao de Alimentos Brasileiros</div>
-        <div class="card-body" style="color:rgba(255,255,255,0.25);">Area promissora com forte demanda latina em crescimento na Florida. Pesquisa aprofundada a iniciar.</div>
-      </div>
-      <div style="background:rgba(255,255,255,0.03); border-radius:10px; padding:18px 20px; border:0.5px dashed rgba(255,255,255,0.08);">
-        <div class="card-title" style="color:rgba(255,255,255,0.45); margin-bottom:6px;">Setor de Ar Condicionado</div>
-        <div class="card-body" style="color:rgba(255,255,255,0.25);">Mercado de altissima demanda na Florida. Oportunidades em instalacao e importacao de equipamentos. Em analise.</div>
-      </div>
-    </div>
-    <div style="font-size:13px; color:rgba(255,255,255,0.28); margin-top:16px; padding-top:16px; border-top:0.5px solid rgba(255,255,255,0.08);">Identificar e avaliar novas oportunidades como essas e uma das funcoes centrais do COO da Holding — utilizando network local e conhecimento do mercado americano.</div>
-  </div>
-</div>
-</div><!-- end dark section -->
-
-<div class="page">
-
-<!-- A ESTRUTURA: ORG CHART -->
-<div class="section">
-  <div class="sec-tag">A estrutura</div>
-  <div class="sec-title">Quem e quem na Holding Corp</div>
-  <div class="divider"></div>
-  <div class="sec-lead">Uma estrutura clara, com papeis bem definidos e autoridade bem distribuida. Juninho controla tudo via Board. Francisco representa nos EUA. Eu opero tudo.</div>
-
-  <div class="org-wrap">
-    <div class="org-title">Organograma &mdash; Juninho Holding Corp</div>
-    <svg width="100%" viewBox="0 0 860 532" role="img" style="display:block;">
-      <title>Organograma Juninho Holding Corp</title>
-      <desc>Estrutura corporativa com Board of Directors, Holding Corp e LLCs operacionais independentes.</desc>
+  <!-- DIAGRAM A: The Full Model Flow -->
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 860 300" role="img">
+      <title>Fluxo do modelo da Holding Corp</title>
       <defs>
-        <marker id="ar1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-          <path d="M2 2L8 5L2 8" fill="none" stroke="#888780" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 2L8 5L2 8" fill="none" stroke="#E8642A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 2L8 5L2 8" fill="none" stroke="#1D7A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="a3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 2L8 5L2 8" fill="none" stroke="#5A7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </marker>
       </defs>
 
-      <!-- BOARD -->
-      <rect x="280" y="22" width="300" height="60" rx="8" fill="#E8642A"/>
-      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="14" fill="#FFFFFF" x="430" y="45" text-anchor="middle" dominant-baseline="central">Board of Directors</text>
-      <text font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.78)" x="430" y="65" text-anchor="middle" dominant-baseline="central">Juninho &mdash; Chairman</text>
+      <!-- STEP 1: Juninho -->
+      <rect x="20" y="100" width="140" height="100" rx="10" fill="#0D1B2A"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="13" fill="#E8642A" x="90" y="128" text-anchor="middle">JUNINHO</text>
+      <text font-family="Arial,sans-serif" font-size="11" fill="rgba(255,255,255,.6)" x="90" y="148" text-anchor="middle">Capital inicial</text>
+      <text font-family="Arial,sans-serif" font-size="11" fill="rgba(255,255,255,.6)" x="90" y="164" text-anchor="middle">+ investidores</text>
+      <text font-family="Arial,sans-serif" font-size="11" fill="rgba(255,255,255,.6)" x="90" y="180" text-anchor="middle">do Brasil</text>
 
-      <!-- Approval note -->
-      <text font-family="Arial,sans-serif" font-size="11" fill="#888780" x="440" y="102" text-anchor="start">Aprova todos os investimentos</text>
+      <!-- Arrow 1→2 -->
+      <line x1="162" y1="150" x2="196" y2="150" stroke="#E8642A" stroke-width="2" marker-end="url(#a1)"/>
 
-      <!-- Arrow Board to Holding -->
-      <line x1="430" y1="82" x2="430" y2="128" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#ar1)"/>
+      <!-- STEP 2: Holding -->
+      <rect x="198" y="80" width="180" height="140" rx="10" fill="#E8642A"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="11" fill="rgba(255,255,255,.7)" x="288" y="108" text-anchor="middle">O NUCLEO</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="15" fill="#FFFFFF" x="288" y="132" text-anchor="middle">Holding Corp</text>
+      <line x1="218" y1="144" x2="358" y2="144" stroke="rgba(255,255,255,.2)" stroke-width=".5"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="rgba(255,255,255,.75)" x="288" y="162" text-anchor="middle">Identifica oportunidades</text>
+      <text font-family="Arial,sans-serif" font-size="11" fill="rgba(255,255,255,.75)" x="288" y="178" text-anchor="middle">Estrutura LLCs</text>
+      <text font-family="Arial,sans-serif" font-size="11" fill="rgba(255,255,255,.75)" x="288" y="194" text-anchor="middle">Opera e gere tudo</text>
 
-      <!-- HOLDING CONTAINER -->
-      <rect x="38" y="130" width="784" height="212" rx="12" fill="#F5F2EB" stroke="#D3D1C7" stroke-width="1" stroke-dasharray="9 5"/>
+      <!-- Arrow 2→3 top -->
+      <line x1="380" y1="150" x2="414" y2="150" stroke="#5A7A8A" stroke-width="2" marker-end="url(#a3)"/>
 
-      <!-- Holding label -->
-      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="14" fill="#0D1B2A" x="430" y="151" text-anchor="middle" dominant-baseline="central">Juninho Holding Corp</text>
-
-      <!-- Shareholder badge: Juninho -->
-      <rect x="66" y="164" width="220" height="22" rx="11" fill="#FDECD9" stroke="#E8642A" stroke-width="1"/>
-      <text font-family="Arial,sans-serif" font-size="11.5" fill="#B84E18" x="176" y="175" text-anchor="middle" dominant-baseline="central">Juninho &mdash; Socio Majoritario</text>
-
-      <!-- Shareholder badge: Francisco -->
-      <rect x="306" y="164" width="198" height="22" rx="11" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
-      <text font-family="Arial,sans-serif" font-size="11.5" fill="#0C447C" x="405" y="175" text-anchor="middle" dominant-baseline="central">Francisco Neto &mdash; Socio</text>
-
-      <!-- President box -->
-      <rect x="52" y="196" width="268" height="132" rx="8" fill="#EBF3FC" stroke="#378ADD" stroke-width="1"/>
-      <text font-family="Arial,sans-serif" font-size="10.5" font-weight="600" fill="#185FA5" x="186" y="215" text-anchor="middle" dominant-baseline="central">PRESIDENT</text>
-      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="14" fill="#0C447C" x="186" y="235" text-anchor="middle" dominant-baseline="central">Francisco Neto</text>
-      <line x1="70" y1="246" x2="302" y2="246" stroke="#B5D4F4" stroke-width="0.5"/>
-      <text font-family="Arial,sans-serif" font-size="11.5" fill="#185FA5" x="186" y="262" text-anchor="middle" dominant-baseline="central">Autoridade juridica,</text>
-      <text font-family="Arial,sans-serif" font-size="11.5" fill="#185FA5" x="186" y="278" text-anchor="middle" dominant-baseline="central">financeira e fiscal</text>
-      <text font-family="Arial,sans-serif" font-size="11.5" fill="#185FA5" x="186" y="294" text-anchor="middle" dominant-baseline="central">Aprovacoes operacionais</text>
-      <text font-family="Arial,sans-serif" font-size="11.5" fill="#185FA5" x="186" y="310" text-anchor="middle" dominant-baseline="central">Representa a Corp nos EUA</text>
-
-      <!-- reporta a label + arrow -->
-      <text font-family="Arial,sans-serif" font-size="11" fill="#B4B2A9" x="430" y="254" text-anchor="middle" dominant-baseline="central">reporta a</text>
-      <line x1="538" y1="264" x2="322" y2="264" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#ar1)"/>
-
-      <!-- COO box -->
-      <rect x="540" y="196" width="268" height="132" rx="8" fill="#E3F4EE" stroke="#1D9E75" stroke-width="1"/>
-      <text font-family="Arial,sans-serif" font-size="10.5" font-weight="600" fill="#0F6E56" x="674" y="215" text-anchor="middle" dominant-baseline="central">COO</text>
-      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="14" fill="#085041" x="674" y="235" text-anchor="middle" dominant-baseline="central">Maruan Barakat</text>
-      <line x1="558" y1="246" x2="790" y2="246" stroke="#9FE1CB" stroke-width="0.5"/>
-      <text font-family="Arial,sans-serif" font-size="11.5" fill="#0F6E56" x="674" y="262" text-anchor="middle" dominant-baseline="central">Operacoes e estruturacao</text>
-      <text font-family="Arial,sans-serif" font-size="11.5" fill="#0F6E56" x="674" y="278" text-anchor="middle" dominant-baseline="central">Gestao de todas as LLCs</text>
-      <text font-family="Arial,sans-serif" font-size="11.5" fill="#0F6E56" x="674" y="294" text-anchor="middle" dominant-baseline="central">Novos negocios</text>
-      <text font-family="Arial,sans-serif" font-size="11.5" fill="#0F6E56" x="674" y="310" text-anchor="middle" dominant-baseline="central">Expansao do portfolio</text>
-
-      <!-- Arrows Holding to LLCs -->
-      <line x1="168" y1="342" x2="168" y2="368" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#ar1)"/>
-      <line x1="430" y1="342" x2="430" y2="368" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#ar1)"/>
-      <line x1="692" y1="342" x2="692" y2="368" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#ar1)"/>
-
+      <!-- LLCs column -->
       <!-- LLC 1 -->
-      <rect x="52" y="370" width="232" height="76" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
-      <text font-family="Arial,sans-serif" font-size="10" fill="#534AB7" x="168" y="388" text-anchor="middle" dominant-baseline="central">LLC</text>
-      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="13.5" fill="#3C3489" x="168" y="407" text-anchor="middle" dominant-baseline="central">Monitores LED</text>
-      <text font-family="Arial,sans-serif" font-size="11.5" fill="#534AB7" x="168" y="426" text-anchor="middle" dominant-baseline="central">Distribuicao B2B</text>
+      <rect x="416" y="60" width="148" height="60" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#534AB7" x="490" y="82" text-anchor="middle">LLC</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="13" fill="#3C3489" x="490" y="100" text-anchor="middle">Monitores LED</text>
+
+      <!-- Arrow Holding → LLC1 -->
+      <line x1="380" y1="120" x2="414" y2="95" stroke="#5A7A8A" stroke-width="1.5" marker-end="url(#a3)"/>
 
       <!-- LLC 2 -->
-      <rect x="314" y="370" width="232" height="76" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
-      <text font-family="Arial,sans-serif" font-size="10" fill="#534AB7" x="430" y="388" text-anchor="middle" dominant-baseline="central">LLC</text>
-      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="13.5" fill="#3C3489" x="430" y="407" text-anchor="middle" dominant-baseline="central">Solar + EV Charging</text>
-      <text font-family="Arial,sans-serif" font-size="11.5" fill="#534AB7" x="430" y="426" text-anchor="middle" dominant-baseline="central">Infraestrutura</text>
+      <rect x="416" y="140" width="148" height="60" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#534AB7" x="490" y="162" text-anchor="middle">LLC</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="13" fill="#3C3489" x="490" y="180" text-anchor="middle">Solar + EV</text>
 
-      <!-- LLC 3 (future) -->
-      <rect x="576" y="370" width="232" height="76" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="6 3"/>
-      <text font-family="Arial,sans-serif" font-size="10" fill="#888780" x="692" y="388" text-anchor="middle" dominant-baseline="central">LLC</text>
-      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="13.5" fill="#5F5E5A" x="692" y="407" text-anchor="middle" dominant-baseline="central">Proximas</text>
-      <text font-family="Arial,sans-serif" font-size="11.5" fill="#888780" x="692" y="426" text-anchor="middle" dominant-baseline="central">oportunidades</text>
+      <!-- LLC 3 future -->
+      <rect x="416" y="220" width="148" height="60" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="5 3"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#888780" x="490" y="242" text-anchor="middle">LLC</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="13" fill="#5F5E5A" x="490" y="260" text-anchor="middle">Proxima...</text>
 
-      <!-- Sub-structure connectors -->
-      <line x1="168" y1="446" x2="168" y2="457" stroke="#D3D1C7" stroke-width="0.8"/>
-      <line x1="430" y1="446" x2="430" y2="457" stroke="#D3D1C7" stroke-width="0.8"/>
+      <!-- Arrow Holding → LLC3 -->
+      <line x1="380" y1="180" x2="414" y2="205" stroke="#5A7A8A" stroke-width="1.5" marker-end="url(#a3)"/>
 
-      <!-- Sub-structure boxes -->
-      <rect x="84" y="458" width="168" height="34" rx="6" fill="none" stroke="#D3D1C7" stroke-width="0.8" stroke-dasharray="4 3"/>
-      <text font-family="Arial,sans-serif" font-size="10.5" fill="#888780" x="168" y="470" text-anchor="middle" dominant-baseline="central">Estrutura propria:</text>
-      <text font-family="Arial,sans-serif" font-size="10.5" fill="#888780" x="168" y="484" text-anchor="middle" dominant-baseline="central">Diretores · Gerentes</text>
+      <!-- Return arrows LLC → Result -->
+      <line x1="566" y1="90" x2="620" y2="90" stroke="#1D7A4A" stroke-width="1.5" marker-end="url(#a2)"/>
+      <line x1="566" y1="170" x2="620" y2="150" stroke="#1D7A4A" stroke-width="1.5" marker-end="url(#a2)"/>
 
-      <rect x="346" y="458" width="168" height="34" rx="6" fill="none" stroke="#D3D1C7" stroke-width="0.8" stroke-dasharray="4 3"/>
-      <text font-family="Arial,sans-serif" font-size="10.5" fill="#888780" x="430" y="470" text-anchor="middle" dominant-baseline="central">Estrutura propria:</text>
-      <text font-family="Arial,sans-serif" font-size="10.5" fill="#888780" x="430" y="484" text-anchor="middle" dominant-baseline="central">Diretores · Gerentes</text>
+      <!-- RESULT box -->
+      <rect x="622" y="52" width="168" height="196" rx="10" fill="#E6F5EE" stroke="#1D7A4A" stroke-width="1.5"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="13" fill="#1D7A4A" x="706" y="80" text-anchor="middle">RETORNO</text>
+      <line x1="642" y1="90" x2="770" y2="90" stroke="#9FE1CB" stroke-width=".5"/>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#1A5C3A" x="706" y="112" text-anchor="middle">Management Fee</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#1A5C3A" x="706" y="130" text-anchor="middle">das LLCs</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#1A5C3A" x="706" y="152" text-anchor="middle">+ dividendos</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#1A5C3A" x="706" y="170" text-anchor="middle">da Holding</text>
+      <line x1="642" y1="182" x2="770" y2="182" stroke="#9FE1CB" stroke-width=".5"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#0F6E56" x="706" y="200" text-anchor="middle">Risco: isolado</text>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#0F6E56" x="706" y="218" text-anchor="middle">em cada LLC</text>
 
-      <!-- Bottom note -->
-      <text font-family="Arial,sans-serif" font-size="11" fill="#B4B2A9" x="430" y="522" text-anchor="middle" dominant-baseline="central">Cada LLC: participacao da Holding Corp + investidores externos especificos por negocio</text>
+      <!-- Key insight labels -->
+      <text font-family="Arial,sans-serif" font-size="10" fill="#B4B2A9" x="490" y="296" text-anchor="middle">Cada LLC: risco proprio, isolado</text>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#B4B2A9" x="706" y="260" text-anchor="middle">Juninho sempre ganha</text>
+    </svg>
+  </div>
+
+  <div class="statement">
+    <p>O Juninho <span class="accent">sempre ganha pela Holding</span> — independente de entrar ou nao em cada LLC. O risco fica isolado. O retorno e diversificado.</p>
+  </div>
+</div>
+
+<!-- ═══════ SECTION 2: VISUAL OVERVIEW ═══════ -->
+<div class="section">
+  <div class="sec-tag">O modelo em acao</div>
+  <div class="sec-title">Da oportunidade ao retorno.</div>
+  <div class="divider"></div>
+  <div class="sec-sub">Uma visao completa de como o ciclo funciona: da identificacao ao lucro distribuido.</div>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 860 350" role="img">
+      <title>Ciclo completo da Holding Corp</title>
+      <defs>
+        <marker id="d1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 2L8 5L2 8" fill="none" stroke="#5A7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="d2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 2L8 5L2 8" fill="none" stroke="#1D7A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <!-- ── LANE HEADERS ── -->
+      <rect x="8"   y="8" width="162" height="24" rx="5" fill="#F5F2EB" stroke="#E0DDD5" stroke-width=".5"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="9" fill="#5A7A8A" x="89" y="20" text-anchor="middle" dominant-baseline="central" letter-spacing="1">HOLDING CORP</text>
+
+      <rect x="178" y="8" width="162" height="24" rx="5" fill="#FEF0E8" stroke="#E8642A" stroke-width=".5"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="9" fill="#E8642A" x="259" y="20" text-anchor="middle" dominant-baseline="central" letter-spacing="1">JUNINHO</text>
+
+      <rect x="348" y="8" width="162" height="24" rx="5" fill="#F5F2EB" stroke="#C0BDB5" stroke-width=".5"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="9" fill="#5A7A8A" x="429" y="20" text-anchor="middle" dominant-baseline="central" letter-spacing="1">BRASIL</text>
+
+      <rect x="518" y="8" width="182" height="24" rx="5" fill="#EEEDFE" stroke="#534AB7" stroke-width=".5"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="9" fill="#534AB7" x="609" y="20" text-anchor="middle" dominant-baseline="central" letter-spacing="1">LLC OPERACIONAL</text>
+
+      <rect x="708" y="8" width="144" height="24" rx="5" fill="#E6F5EE" stroke="#1D7A4A" stroke-width=".5"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="9" fill="#1D7A4A" x="780" y="20" text-anchor="middle" dominant-baseline="central" letter-spacing="1">RETORNO</text>
+
+      <!-- ── LANE DIVIDERS ── -->
+      <line x1="170" y1="32" x2="170" y2="342" stroke="#E0DDD5" stroke-width=".5" stroke-dasharray="4 3"/>
+      <line x1="340" y1="32" x2="340" y2="342" stroke="#E0DDD5" stroke-width=".5" stroke-dasharray="4 3"/>
+      <line x1="510" y1="32" x2="510" y2="342" stroke="#E0DDD5" stroke-width=".5" stroke-dasharray="4 3"/>
+      <line x1="700" y1="32" x2="700" y2="342" stroke="#E0DDD5" stroke-width=".5" stroke-dasharray="4 3"/>
+
+      <!-- ── ROW 1: COO identifica → Board aprova ── -->
+      <rect x="16" y="52" width="142" height="52" rx="8" fill="#1A2E42"/>
+      <text font-family="Arial,sans-serif" font-size="10.5" fill="#E8642A" x="87" y="71" text-anchor="middle" font-weight="600">COO identifica</text>
+      <text font-family="Arial,sans-serif" font-size="10.5" fill="rgba(255,255,255,.75)" x="87" y="88" text-anchor="middle">oportunidade</text>
+
+      <!-- Arrow + label -->
+      <line x1="158" y1="78" x2="186" y2="78" stroke="#5A7A8A" stroke-width="1.6" marker-end="url(#d1)"/>
+      <text font-family="Arial,sans-serif" font-size="8.5" fill="#B4B2A9" x="172" y="70" text-anchor="middle">apresenta</text>
+
+      <rect x="188" y="52" width="142" height="52" rx="8" fill="#E8642A"/>
+      <text font-family="Arial,sans-serif" font-size="10.5" fill="#fff" x="259" y="71" text-anchor="middle" font-weight="600">Board aprova</text>
+      <text font-family="Arial,sans-serif" font-size="10.5" fill="rgba(255,255,255,.85)" x="259" y="88" text-anchor="middle">o investimento</text>
+
+      <!-- ── Arrow down → Juninho decide ── -->
+      <line x1="259" y1="104" x2="259" y2="130" stroke="#5A7A8A" stroke-width="1.5" marker-end="url(#d1)"/>
+      <text font-family="Arial,sans-serif" font-size="8.5" fill="#B4B2A9" x="298" y="120" text-anchor="start">capta capital</text>
+
+      <!-- ── ROW 2: Holding socia + Juninho decide + Investidores ── -->
+      <rect x="16" y="132" width="142" height="48" rx="8" fill="#F5F2EB" stroke="#C0BDB5" stroke-width=".5"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#5A7A8A" x="87" y="152" text-anchor="middle">Holding entra</text>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#5A7A8A" x="87" y="168" text-anchor="middle">como socia</text>
+      <line x1="87" y1="104" x2="87" y2="132" stroke="#5A7A8A" stroke-width="1.3" stroke-dasharray="4 2"/>
+
+      <rect x="188" y="132" width="142" height="60" rx="8" fill="#0D1B2A" stroke="#E8642A" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#E8642A" x="259" y="153" text-anchor="middle" font-weight="600">Juninho decide</text>
+      <text font-family="Arial,sans-serif" font-size="10" fill="rgba(255,255,255,.65)" x="259" y="170" text-anchor="middle">proprio ou</text>
+      <text font-family="Arial,sans-serif" font-size="10" fill="rgba(255,255,255,.65)" x="259" y="185" text-anchor="middle">investidores</text>
+
+      <!-- Arrow to Brasil -->
+      <line x1="330" y1="158" x2="356" y2="158" stroke="#5A7A8A" stroke-width="1.5" marker-end="url(#d1)"/>
+
+      <!-- Investor circles -->
+      <circle cx="389" cy="145" r="22" fill="#F5F2EB" stroke="#C0BDB5" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="9.5" fill="#5A7A8A" x="389" y="141" text-anchor="middle">Inv.</text>
+      <text font-family="Arial,sans-serif" font-size="9.5" fill="#5A7A8A" x="389" y="153" text-anchor="middle">A</text>
+
+      <circle cx="462" cy="145" r="22" fill="#F5F2EB" stroke="#C0BDB5" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="9.5" fill="#5A7A8A" x="462" y="141" text-anchor="middle">Inv.</text>
+      <text font-family="Arial,sans-serif" font-size="9.5" fill="#5A7A8A" x="462" y="153" text-anchor="middle">B</text>
+
+      <!-- ── Convergence lines → LLC ── -->
+      <line x1="87"  y1="180" x2="87"  y2="232" stroke="#5A7A8A" stroke-width="1.3"/>
+      <line x1="259" y1="192" x2="259" y2="232" stroke="#5A7A8A" stroke-width="1.3"/>
+      <line x1="389" y1="167" x2="389" y2="232" stroke="#5A7A8A" stroke-width="1.3"/>
+      <line x1="462" y1="167" x2="462" y2="232" stroke="#5A7A8A" stroke-width="1.3"/>
+      <line x1="87"  y1="232" x2="555" y2="232" stroke="#5A7A8A" stroke-width="1.3"/>
+      <line x1="555" y1="232" x2="555" y2="248" stroke="#5A7A8A" stroke-width="1.5" marker-end="url(#d1)"/>
+
+      <!-- ── LLC Box ── -->
+      <rect x="522" y="250" width="166" height="52" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#534AB7" x="605" y="271" text-anchor="middle" font-weight="600">LLC criada e operada</text>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#534AB7" x="605" y="287" text-anchor="middle">pela Holding</text>
+
+      <!-- Risco badge — below LLC box, inside viewBox -->
+      <rect x="522" y="306" width="166" height="22" rx="5" fill="#FFF1F1" stroke="#F0BEBE" stroke-width=".5"/>
+      <text font-family="Arial,sans-serif" font-size="9" fill="#C0392B" x="605" y="317" text-anchor="middle" dominant-baseline="central">Risco: isolado nesta LLC</text>
+
+      <!-- Arrow LLC → Retorno -->
+      <line x1="688" y1="276" x2="716" y2="276" stroke="#1D7A4A" stroke-width="1.6" marker-end="url(#d2)"/>
+
+      <!-- Retorno box -->
+      <rect x="718" y="250" width="130" height="52" rx="8" fill="#E6F5EE" stroke="#1D7A4A" stroke-width="1.5"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#1D7A4A" x="783" y="271" text-anchor="middle" font-weight="600">Lucro para</text>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#1D7A4A" x="783" y="287" text-anchor="middle">os socios</text>
+
+      <!-- Return arc — text clearly inside viewBox -->
+      <path d="M783,250 Q783,72 259,72" fill="none" stroke="#1D7A4A" stroke-width="1.4" stroke-dasharray="5 3" marker-end="url(#d2)"/>
+      <text font-family="Arial,sans-serif" font-size="8.5" fill="#1D7A4A" x="600" y="55" text-anchor="middle">retorno ao Juninho via Holding</text>
     </svg>
   </div>
 </div>
 
-<!-- MEU VALOR -->
+<!-- ═══════ SECTION 3: FLOWCHART ═══════ -->
 <div class="section">
-  <div class="sec-tag">01 &middot; Meu Valor</div>
-  <div class="sec-title">O que eu trago que nao se contrata no mercado por este preco</div>
+  <div class="sec-tag">O papel do Juninho</div>
+  <div class="sec-title">De investidor a conector de capital.</div>
   <div class="divider"></div>
-  <div class="sec-lead">Contratar alguem com este perfil nos EUA custaria entre <strong style="color:var(--navy);">$180.000 e $240.000 por ano</strong>. E mesmo assim voce nao teria alguem com network ja estabelecido, experiencia operacional comprovada e cidadania americana — tudo junto, desde o primeiro dia.</div>
+  <div class="sec-sub">A Holding identifica a oportunidade. Juninho decide e capta o capital — proprio ou de investidores do Brasil. A LLC e criada, operada e gerida pela Holding. O lucro volta para todos.</div>
 
-  <div class="card-grid">
-    <div class="card"><div class="card-num">01</div><div class="card-title">Experiencia operacional real</div><div class="card-body">Ja estruturei e operei um negocio de importacao nos EUA (Levitta Concepts), com toda a complexidade logistica, fiscal e comercial que isso exige aqui.</div></div>
-    <div class="card"><div class="card-num">02</div><div class="card-title">Network ativo em Orlando</div><div class="card-body">Tenho contatos diretos com arquitetos, designers de interiores, construtoras, fornecedores e empresarios locais — ativos que levam anos para construir.</div></div>
-    <div class="card"><div class="card-num">03</div><div class="card-title">Cidadao americano</div><div class="card-body">Posso representar legalmente a Corp, assinar contratos, abrir contas e operar sem nenhuma restricao no mercado americano. Sem burocracia de visto, sem intermediarios.</div></div>
-    <div class="card"><div class="card-num">04</div><div class="card-title">Capacidade de estruturar</div><div class="card-body">Estruturo o negocio do zero: entidade juridica, modelo operacional, equipe, canais e parceiros. Voce foca no Brasil e nos investidores — eu cuido de tudo daqui.</div></div>
-    <div class="card"><div class="card-num">05</div><div class="card-title">Ponte Brasil e EUA</div><div class="card-body">Fluente em portugues e ingles, com entendimento profundo das duas culturas de negocios. Sou a ligacao natural entre o capital brasileiro e o mercado americano.</div></div>
-    <div class="card"><div class="card-num">06</div><div class="card-title">Radar de oportunidades</div><div class="card-body">Monitoro o mercado local continuamente e apresento novas oportunidades de investimento com analise real — utilizando meu network e conhecimento do terreno americano.</div></div>
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 860 480" role="img">
+      <title>Fluxograma: como cada novo negocio nasce na Holding</title>
+      <defs>
+        <marker id="b1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 2L8 5L2 8" fill="none" stroke="#5A7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="b2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 2L8 5L2 8" fill="none" stroke="#E8642A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="b3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 2L8 5L2 8" fill="none" stroke="#1D7A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="b4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 2L8 5L2 8" fill="none" stroke="#534AB7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <!-- ── STEP 1: Holding identifica ── -->
+      <rect x="280" y="16" width="300" height="76" rx="10" fill="#1A2E42" stroke="#E8642A" stroke-width="1.5"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#E8642A" x="430" y="36" text-anchor="middle" font-weight="600" letter-spacing="1">PASSO 1</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="14" fill="#FFFFFF" x="430" y="55" text-anchor="middle">Holding identifica a oportunidade</text>
+      <text font-family="Arial,sans-serif" font-size="10.5" fill="rgba(255,255,255,.5)" x="430" y="72" text-anchor="middle">COO pesquisa e apresenta ao Board</text>
+
+      <!-- Arrow 1→2 -->
+      <line x1="430" y1="92" x2="430" y2="118" stroke="#5A7A8A" stroke-width="1.8" marker-end="url(#b1)"/>
+
+      <!-- ── STEP 2: Board aprova ── -->
+      <rect x="310" y="120" width="240" height="56" rx="10" fill="#E8642A"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="rgba(255,255,255,.7)" x="430" y="140" text-anchor="middle" font-weight="600" letter-spacing="1">PASSO 2</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="14" fill="#FFFFFF" x="430" y="159" text-anchor="middle">Board aprova o investimento</text>
+
+      <!-- Arrow 2→3 -->
+      <line x1="430" y1="176" x2="430" y2="206" stroke="#5A7A8A" stroke-width="1.8" marker-end="url(#b1)"/>
+
+      <!-- ── STEP 3: Juninho capta capital — DIAMOND DECISION ── -->
+      <!-- Diamond shape -->
+      <polygon points="430,204 570,254 430,304 290,254" fill="#0D1B2A" stroke="#E8642A" stroke-width="1.5"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#E8642A" x="430" y="228" text-anchor="middle" font-weight="600" letter-spacing="1">PASSO 3</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="13" fill="#FFFFFF" x="430" y="250" text-anchor="middle">Como captar o capital?</text>
+      <text font-family="Arial,sans-serif" font-size="10.5" fill="rgba(255,255,255,.55)" x="430" y="270" text-anchor="middle">Juninho decide a composicao</text>
+
+      <!-- Left branch: capital proprio -->
+      <line x1="290" y1="254" x2="140" y2="254" stroke="#E8642A" stroke-width="1.8" marker-end="url(#b2)"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#E8642A" x="215" y="244" text-anchor="middle">capital</text>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#E8642A" x="215" y="256" text-anchor="middle">proprio</text>
+      <rect x="36" y="226" width="104" height="56" rx="8" fill="#FEF0E8" stroke="#E8642A" stroke-width="1"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="12" fill="#C04E1A" x="88" y="249" text-anchor="middle">Juninho</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="12" fill="#C04E1A" x="88" y="265" text-anchor="middle">investe</text>
+
+      <!-- Right branch: investidores -->
+      <line x1="570" y1="254" x2="720" y2="254" stroke="#5A7A8A" stroke-width="1.8" marker-end="url(#b1)"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#5A7A8A" x="645" y="244" text-anchor="middle">capta do</text>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#5A7A8A" x="645" y="256" text-anchor="middle">Brasil</text>
+      <rect x="720" y="210" width="116" height="88" rx="8" fill="#F5F2EB" stroke="#C0BDB5" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#5A7A8A" x="778" y="238" text-anchor="middle">Investidor A</text>
+      <line x1="740" y1="250" x2="816" y2="250" stroke="#E0DDD5" stroke-width=".5"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#5A7A8A" x="778" y="268" text-anchor="middle">Investidor B</text>
+      <text font-family="Arial,sans-serif" font-size="9.5" fill="#B4B2A9" x="778" y="288" text-anchor="middle">...</text>
+
+      <!-- Both branches converge down -->
+      <line x1="88" y1="282" x2="88" y2="334" stroke="#5A7A8A" stroke-width="1.5"/>
+      <line x1="88" y1="334" x2="316" y2="334" stroke="#5A7A8A" stroke-width="1.5"/>
+      <line x1="778" y1="298" x2="778" y2="334" stroke="#5A7A8A" stroke-width="1.5"/>
+      <line x1="778" y1="334" x2="544" y2="334" stroke="#5A7A8A" stroke-width="1.5"/>
+      <line x1="430" y1="334" x2="430" y2="352" stroke="#5A7A8A" stroke-width="1.8" marker-end="url(#b1)"/>
+
+      <!-- ── STEP 4: LLC criada ── -->
+      <rect x="280" y="354" width="300" height="56" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/>
+      <text font-family="Arial,sans-serif" font-size="10" fill="#534AB7" x="430" y="373" text-anchor="middle" font-weight="600" letter-spacing="1">PASSO 4</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="14" fill="#3C3489" x="430" y="392" text-anchor="middle">LLC criada e operada pela Holding</text>
+
+      <!-- Arrow 4→5 -->
+      <line x1="430" y1="410" x2="430" y2="432" stroke="#5A7A8A" stroke-width="1.8" marker-end="url(#b1)"/>
+
+      <!-- ── STEP 5: Retorno ── -->
+      <rect x="280" y="434" width="300" height="36" rx="10" fill="#E6F5EE" stroke="#1D7A4A" stroke-width="1.5"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="13" fill="#1D7A4A" x="430" y="457" text-anchor="middle">Lucro distribui para a Holding e socios</text>
+
+      <!-- Step numbers on left margin -->
+      <text font-family="Arial,sans-serif" font-size="9.5" fill="#C0BDB5" x="10" y="50" text-anchor="middle">1</text>
+      <text font-family="Arial,sans-serif" font-size="9.5" fill="#C0BDB5" x="10" y="142" text-anchor="middle">2</text>
+      <text font-family="Arial,sans-serif" font-size="9.5" fill="#C0BDB5" x="10" y="254" text-anchor="middle">3</text>
+      <text font-family="Arial,sans-serif" font-size="9.5" fill="#C0BDB5" x="10" y="382" text-anchor="middle">4</text>
+      <text font-family="Arial,sans-serif" font-size="9.5" fill="#C0BDB5" x="10" y="452" text-anchor="middle">5</text>
+    </svg>
   </div>
 </div>
 
-<!-- MEU PAPEL -->
+<!-- ═══════ SECTION 3: LLC EXAMPLES ═══════ -->
 <div class="section">
-  <div class="sec-tag">02 &middot; Meu Papel</div>
-  <div class="sec-title">COO da Holding: voce decide, eu construo e opero</div>
+  <div class="sec-tag">Como funciona na pratica</div>
+  <div class="sec-title">Cada LLC e independente. O risco e isolado.</div>
   <div class="divider"></div>
-  <div class="sec-lead">Nao serei apenas o operador de um negocio. Serei o Chief Operating Officer da Holding Corp, responsavel por transformar as decisoes do Board em realidade operacional, com transparencia total para voce e para o Francisco.</div>
+  <div class="sec-sub">Exemplos de como a composicao societaria pode funcionar em cada negocio. A Holding sempre participa. Os investidores entram negocio a negocio, conforme o interesse.</div>
 
-  <div class="orange-box"><strong>O modelo e simples:</strong> Voce tem capital, visao e uma rede de contatos no Brasil. Eu tenho o conhecimento do mercado americano, a rede de contatos local e a capacidade de colocar tudo em pe do jeito certo. Voce e o Francisco terao acesso total a tudo: contas, contratos, resultados e decisoes. Sem surpresas, sem caixa preta.</div>
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 860 310" role="img">
+      <title>Exemplos ficticios de composicao societaria das LLCs</title>
 
-  <div>
-    <div class="step"><div class="step-num">1</div><div><div class="step-title">Abertura e estruturacao juridica da Corp</div><div class="step-body">Coordeno a abertura da Corporation americana com contador e advogado locais, estruturando o Board of Directors, o quadro societario e os documentos corporativos corretamente desde o inicio.</div></div></div>
-    <div class="step"><div class="step-num">2</div><div><div class="step-title">Criacao e estruturacao das LLCs operacionais</div><div class="step-body">Para cada negocio aprovado pelo Board, estruturo a LLC correspondente: entidade, modelo de negocio, plano operacional, parceiros locais, canais de venda e compliance regulatorio.</div></div></div>
-    <div class="step"><div class="step-num">3</div><div><div class="step-title">Gestao operacional de todas as LLCs</div><div class="step-body">Cada LLC criada fica sob minha gestao como COO da Holding. Conforme cada LLC cresce, estruturo a equipe independente necessaria — diretores, gerentes e operadores especificos para aquele negocio.</div></div></div>
-    <div class="step"><div class="step-num">4</div><div><div class="step-title">Identificacao e apresentacao de novas oportunidades</div><div class="step-body">Utilizando meu network e meu conhecimento do mercado americano, apresento continuamente novas oportunidades ao Board com analise real de viabilidade, modelo de negocio e potencial de retorno.</div></div></div>
-    <div class="step"><div class="step-num">5</div><div><div class="step-title">Transparencia total em tempo real</div><div class="step-body">Voce e o Francisco terao acesso a tudo, a qualquer momento: contas bancarias, contratos, relatorios mensais, pipeline de negocios e decisoes operacionais. Nada acontece no escuro.</div></div></div>
-    <div class="step"><div class="step-num">6</div><div><div class="step-title">Expansao continua do portfolio</div><div class="step-body">O core business da Holding e gerar e gerir novos negocios. Meu trabalho como COO e manter esse motor funcionando — sempre trazendo oportunidades avaliadas, fundamentadas e prontas para aprovacao do Board.</div></div></div>
+      <!-- Title row -->
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="12" fill="#888780" x="160" y="24" text-anchor="middle" letter-spacing="1">EXEMPLO A</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="12" fill="#888780" x="430" y="24" text-anchor="middle" letter-spacing="1">EXEMPLO B</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="12" fill="#888780" x="700" y="24" text-anchor="middle" letter-spacing="1">EXEMPLO C</text>
+
+      <!-- ── EXAMPLE A: LED LLC ── -->
+      <rect x="32" y="36" width="256" height="260" rx="12" fill="#FFFFFF" stroke="#E0DDD5" stroke-width=".5"/>
+      <!-- LLC label -->
+      <rect x="52" y="52" width="216" height="36" rx="8" fill="#EEEDFE"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="13" fill="#3C3489" x="160" y="74" text-anchor="middle">LLC Monitores LED</text>
+
+      <!-- Pie chart A (approximate with arcs) -->
+      <!-- 30% Holding = 108deg, 50% Inv A = 180deg, 20% Juninho = 72deg -->
+      <g transform="translate(160,168)">
+        <!-- Holding 30% orange slice -->
+        <path d="M0,0 L0,-55 A55,55 0 0,1 47.6,-27.5 Z" fill="#E8642A"/>
+        <!-- Investor A 50% purple slice -->
+        <path d="M0,0 L47.6,-27.5 A55,55 0 0,1 0,55 Z" fill="#534AB7"/>
+        <!-- Juninho 20% navy slice -->
+        <path d="M0,0 L0,55 A55,55 0 0,1 -55,0 A55,55 0 0,1 0,-55 Z" fill="#0D1B2A"/>
+      </g>
+
+      <!-- Legend A -->
+      <rect x="52" y="236" width="11" height="11" rx="2" fill="#E8642A"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#0D1B2A" x="68" y="246">Holding Corp — 30%</text>
+      <rect x="52" y="254" width="11" height="11" rx="2" fill="#534AB7"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#0D1B2A" x="68" y="264">Investidor A — 50%</text>
+      <rect x="52" y="272" width="11" height="11" rx="2" fill="#0D1B2A"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#0D1B2A" x="68" y="282">Juninho direto — 20%</text>
+
+      <!-- ── EXAMPLE B: Solar LLC ── -->
+      <rect x="302" y="36" width="256" height="260" rx="12" fill="#FFFFFF" stroke="#E0DDD5" stroke-width=".5"/>
+      <rect x="322" y="52" width="216" height="36" rx="8" fill="#E3F4EE"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="13" fill="#085041" x="430" y="74" text-anchor="middle">LLC Solar + EV</text>
+
+      <!-- Pie chart B -->
+      <!-- Holding 25%, Inv B 75% -->
+      <g transform="translate(430,168)">
+        <!-- Holding 25% = 90deg orange -->
+        <path d="M0,0 L0,-55 A55,55 0 0,1 55,0 Z" fill="#E8642A"/>
+        <!-- Investor B 75% = 270deg purple -->
+        <path d="M0,0 L55,0 A55,55 0 0,1 0,55 A55,55 0 0,1 -55,0 A55,55 0 0,1 0,-55 Z" fill="#534AB7"/>
+      </g>
+
+      <rect x="322" y="236" width="11" height="11" rx="2" fill="#E8642A"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#0D1B2A" x="338" y="246">Holding Corp — 25%</text>
+      <rect x="322" y="254" width="11" height="11" rx="2" fill="#534AB7"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#0D1B2A" x="338" y="264">Investidor B — 75%</text>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#888780" x="338" y="284">Juninho: nao entrou direto</text>
+
+      <!-- ── EXAMPLE C: Future LLC ── -->
+      <rect x="572" y="36" width="256" height="260" rx="12" fill="#FFFFFF" stroke="#E0DDD5" stroke-width=".5"/>
+      <rect x="592" y="52" width="216" height="36" rx="8" fill="#FEF0E8"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="700" font-size="13" fill="#C04E1A" x="700" y="74" text-anchor="middle">LLC Alimentos Brasileiros</text>
+
+      <!-- Pie chart C -->
+      <!-- Holding 20%, Inv C 40%, Inv D 30%, Juninho 10% -->
+      <g transform="translate(700,168)">
+        <!-- Holding 20% = 72deg -->
+        <path d="M0,0 L0,-55 A55,55 0 0,1 34,-42 Z" fill="#E8642A"/>
+        <!-- Inv C 40% = 144deg -->
+        <path d="M0,0 L34,-42 A55,55 0 0,1 34,42 Z" fill="#534AB7"/>
+        <!-- Inv D 30% = 108deg -->
+        <path d="M0,0 L34,42 A55,55 0 0,1 -55,0 Z" fill="#1A2E42"/>
+        <!-- Juninho 10% = 36deg -->
+        <path d="M0,0 L-55,0 A55,55 0 0,1 0,-55 Z" fill="#C9952A"/>
+      </g>
+
+      <rect x="592" y="228" width="11" height="11" rx="2" fill="#E8642A"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#0D1B2A" x="608" y="238">Holding Corp — 20%</text>
+      <rect x="592" y="246" width="11" height="11" rx="2" fill="#534AB7"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#0D1B2A" x="608" y="256">Investidor C — 40%</text>
+      <rect x="592" y="264" width="11" height="11" rx="2" fill="#1A2E42"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#0D1B2A" x="608" y="274">Investidor D — 30%</text>
+      <rect x="592" y="282" width="11" height="11" rx="2" fill="#C9952A"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#0D1B2A" x="608" y="292">Juninho direto — 10%</text>
+
+      <!-- Key point at bottom -->
+      <text font-family="Arial,sans-serif" font-size="11" fill="#888780" x="430" y="306" text-anchor="middle">Em todos os cenarios: Holding participa + risco fica isolado na LLC + Juninho ganha pela Holding</text>
+    </svg>
+  </div>
+</div>
+
+<!-- ═══════ DARK: ORG CHART ═══════ -->
+</div><!-- end page -->
+<div class="dark-band">
+<div class="page" style="padding-top:0">
+  <div class="sec-tag">A estrutura</div>
+  <div class="sec-title-w">Quem faz o que.</div>
+  <div class="divider"></div>
+
+  <!-- ORG CHART -->
+  <div style="background:rgba(255,255,255,.04);border-radius:16px;padding:28px 20px;border:.5px solid rgba(255,255,255,.08)">
+    <svg viewBox="0 0 860 500" role="img" style="display:block;width:100%">
+      <title>Organograma Juninho Holding Corp</title>
+      <defs>
+        <marker id="c1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 2L8 5L2 8" fill="none" stroke="rgba(180,178,169,.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <!-- BOARD -->
+      <rect x="280" y="20" width="300" height="58" rx="8" fill="#E8642A"/>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="14" fill="#FFFFFF" x="430" y="43" text-anchor="middle" dominant-baseline="central">Board of Directors</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,.75)" x="430" y="64" text-anchor="middle" dominant-baseline="central">Juninho &mdash; Chairman</text>
+
+      <line x1="430" y1="78" x2="430" y2="120" stroke="rgba(180,178,169,.4)" stroke-width="1.5" marker-end="url(#c1)"/>
+
+      <!-- HOLDING CONTAINER -->
+      <rect x="36" y="122" width="788" height="208" rx="12" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.1)" stroke-width="1" stroke-dasharray="8 5"/>
+
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="13" fill="rgba(255,255,255,.5)" x="430" y="142" text-anchor="middle">Juninho Holding Corp</text>
+
+      <!-- Badges -->
+      <rect x="62" y="154" width="210" height="21" rx="10" fill="rgba(232,100,42,.15)" stroke="#E8642A" stroke-width=".5"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#E8642A" x="167" y="165" text-anchor="middle" dominant-baseline="central">Juninho &mdash; Socio Majoritario</text>
+      <rect x="288" y="154" width="184" height="21" rx="10" fill="rgba(56,138,221,.12)" stroke="#378ADD" stroke-width=".5"/>
+      <text font-family="Arial,sans-serif" font-size="11" fill="#6EB3F0" x="380" y="165" text-anchor="middle" dominant-baseline="central">Francisco Neto &mdash; Socio</text>
+
+      <!-- President box -->
+      <rect x="50" y="186" width="264" height="132" rx="8" fill="rgba(56,138,221,.1)" stroke="#378ADD" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#6EB3F0" x="182" y="205" text-anchor="middle">PRESIDENT</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="14" fill="#fff" x="182" y="225" text-anchor="middle">Francisco Neto</text>
+      <line x1="68" y1="235" x2="296" y2="235" stroke="rgba(110,179,240,.2)" stroke-width=".5"/>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#6EB3F0" x="182" y="252" text-anchor="middle">Autoridade juridica e fiscal</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#6EB3F0" x="182" y="268" text-anchor="middle">Aprovacoes operacionais</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#6EB3F0" x="182" y="284" text-anchor="middle">Representa a Corp nos EUA</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#6EB3F0" x="182" y="300" text-anchor="middle">Nao operacional</text>
+
+      <!-- reporta a -->
+      <text font-family="Arial,sans-serif" font-size="10" fill="rgba(255,255,255,.25)" x="430" y="246" text-anchor="middle">reporta a</text>
+      <line x1="526" y1="255" x2="316" y2="255" stroke="rgba(180,178,169,.3)" stroke-width="1.5" marker-end="url(#c1)"/>
+
+      <!-- COO box -->
+      <rect x="546" y="186" width="264" height="132" rx="8" fill="rgba(29,154,117,.1)" stroke="#1D9E75" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#4DC9A0" x="678" y="205" text-anchor="middle">COO</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="14" fill="#fff" x="678" y="225" text-anchor="middle">Maruan Barakat</text>
+      <line x1="564" y1="235" x2="792" y2="235" stroke="rgba(77,201,160,.2)" stroke-width=".5"/>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#4DC9A0" x="678" y="252" text-anchor="middle">Operacoes e estruturacao</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#4DC9A0" x="678" y="268" text-anchor="middle">Gestao de todas as LLCs</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#4DC9A0" x="678" y="284" text-anchor="middle">Novos negocios</text>
+      <text font-family="Arial,sans-serif" font-size="11.5" fill="#4DC9A0" x="678" y="300" text-anchor="middle">Expansao do portfolio</text>
+
+      <!-- Arrows to LLCs -->
+      <line x1="168" y1="330" x2="168" y2="356" stroke="rgba(180,178,169,.3)" stroke-width="1.5" marker-end="url(#c1)"/>
+      <line x1="430" y1="330" x2="430" y2="356" stroke="rgba(180,178,169,.3)" stroke-width="1.5" marker-end="url(#c1)"/>
+      <line x1="692" y1="330" x2="692" y2="356" stroke="rgba(180,178,169,.3)" stroke-width="1.5" marker-end="url(#c1)"/>
+
+      <!-- LLC boxes -->
+      <rect x="50" y="358" width="232" height="68" rx="8" fill="rgba(83,74,183,.15)" stroke="#534AB7" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="9.5" fill="rgba(150,140,255,.8)" x="166" y="378" text-anchor="middle">LLC</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="13" fill="rgba(180,175,255,.9)" x="166" y="396" text-anchor="middle">Monitores LED</text>
+      <text font-family="Arial,sans-serif" font-size="11" fill="rgba(150,140,255,.6)" x="166" y="414" text-anchor="middle">Distribuicao B2B</text>
+
+      <rect x="314" y="358" width="232" height="68" rx="8" fill="rgba(83,74,183,.15)" stroke="#534AB7" stroke-width="1"/>
+      <text font-family="Arial,sans-serif" font-size="9.5" fill="rgba(150,140,255,.8)" x="430" y="378" text-anchor="middle">LLC</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="13" fill="rgba(180,175,255,.9)" x="430" y="396" text-anchor="middle">Solar + EV</text>
+      <text font-family="Arial,sans-serif" font-size="11" fill="rgba(150,140,255,.6)" x="430" y="414" text-anchor="middle">Infraestrutura</text>
+
+      <rect x="578" y="358" width="232" height="68" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(180,178,169,.3)" stroke-width="1" stroke-dasharray="6 3"/>
+      <text font-family="Arial,sans-serif" font-size="9.5" fill="rgba(180,178,169,.5)" x="694" y="378" text-anchor="middle">LLC</text>
+      <text font-family="'Sora',Arial,sans-serif" font-weight="600" font-size="13" fill="rgba(180,178,169,.6)" x="694" y="396" text-anchor="middle">Proximas</text>
+      <text font-family="Arial,sans-serif" font-size="11" fill="rgba(180,178,169,.4)" x="694" y="414" text-anchor="middle">oportunidades</text>
+
+      <text font-family="Arial,sans-serif" font-size="11" fill="rgba(255,255,255,.2)" x="430" y="490" text-anchor="middle">Cada LLC: participacao da Holding + investidores externos por negocio</text>
+    </svg>
   </div>
 
-  <div class="chico-card">
-    <div class="avatar-n">FN</div>
-    <div>
-      <div style="font-family:'Sora',sans-serif; font-weight:600; font-size:14px; color:var(--navy); margin-bottom:4px;">Francisco Neto, President da Holding</div>
-      <div style="font-size:13.5px; color:var(--text-muted); line-height:1.65; font-style:italic;">"O Maruan e quem sabe o que perguntar, o que procurar e o que importa no mercado americano. Contratar consultorias para fazer o que ele faz custaria muito mais. Precisamos dele focado neste projeto."</div>
+  <!-- ROLE PILLS -->
+  <div class="role-grid" style="margin-top:28px">
+    <div class="role-card">
+      <div class="role-avatar" style="background:var(--orange)">JN</div>
+      <div class="role-title">Chairman</div>
+      <div class="role-name">Juninho</div>
+      <div class="role-desc">Controla via Board. Aprova investimentos. Capta capital no Brasil. Ganha pela Holding.</div>
+    </div>
+    <div class="role-card">
+      <div class="role-avatar" style="background:#185FA5">FN</div>
+      <div class="role-title">President</div>
+      <div class="role-name">Francisco Neto</div>
+      <div class="role-desc">Autoridade juridica e fiscal nos EUA. Homem de confianca. Aprova operacionalmente.</div>
+    </div>
+    <div class="role-card">
+      <div class="role-avatar" style="background:var(--green)">MB</div>
+      <div class="role-title">COO</div>
+      <div class="role-name">Maruan Barakat</div>
+      <div class="role-desc">Opera tudo. Estrutura LLCs. Identifica oportunidades. Gere o portfolio da Holding.</div>
+    </div>
+  </div>
+</div>
+</div><!-- end dark band -->
+
+<div class="page">
+
+<!-- ═══════ SECTION: OPORTUNIDADES IDENTIFICADAS ═══════ -->
+<div class="section">
+  <div class="sec-tag">Ja identificadas e analisadas</div>
+  <div class="sec-title">2 LLCs prontas para aprovacao do Board.</div>
+  <div class="divider"></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div style="background:#fff;border-radius:12px;padding:24px;border:.5px solid var(--border);border-top:3px solid var(--orange)">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+        <span style="background:var(--green);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;font-family:'Sora',sans-serif">VIAVEL</span>
+        <span style="font-size:11px;color:var(--muted)">LLC 01</span>
+      </div>
+      <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:17px;color:var(--navy);margin-bottom:10px">Monitores LED</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.65">Distribuicao B2B. Capital para importar em volume. Modelo que ninguem usa porque nao tem o capital que voce tem.</div>
+      <div style="margin-top:14px;font-size:12px;color:var(--muted);border-top:.5px solid var(--border);padding-top:12px">
+        <span style="color:var(--green);font-weight:600">&#10003;</span> Mercado validado &nbsp;&middot;&nbsp;
+        <span style="color:var(--green);font-weight:600">&#10003;</span> Estrategia definida
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:24px;border:.5px solid var(--border);border-top:3px solid var(--gold)">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+        <span style="background:var(--green);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;font-family:'Sora',sans-serif">VIAVEL</span>
+        <span style="font-size:11px;color:var(--muted)">LLC 02</span>
+      </div>
+      <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:17px;color:var(--navy);margin-bottom:10px">Solar + EV Charging</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.65">Modelo validado para a Florida. Expansao nacional em 40+ estados. Incentivos fiscais de ate $100K por ponto expiram em 30 jun.</div>
+      <div style="margin-top:14px;font-size:12px;color:var(--muted);border-top:.5px solid var(--border);padding-top:12px">
+        <span style="color:var(--green);font-weight:600">&#10003;</span> Modelo regulatorio validado &nbsp;&middot;&nbsp;
+        <span style="color:var(--gold);font-weight:600">&#9888;</span> Urgente: 30 jun
+      </div>
+    </div>
+  </div>
+
+  <div class="analysis-box">
+    <div class="analysis-text">Analise completa de cada LLC — mercado, estrategia, regulamentacao, incentivos fiscais e modelo financeiro — disponivel em documento separado.</div>
+    <a href="analise_negocios.html" target="_blank" class="analysis-btn">Ver Analise Detalhada &#8594;</a>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: PROPOSTA ═══════ -->
+<div class="section">
+  <div class="sec-tag">Minha proposta</div>
+  <div class="sec-title">O que eu proponho.</div>
+  <div class="divider"></div>
+
+  <div class="comp-dark">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:.5px solid rgba(255,255,255,.08);flex-wrap:wrap;gap:10px">
+      <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:18px;color:#fff">Estrutura de Compensacao &mdash; COO</div>
+      <span></span>
+    </div>
+    <div class="comp-row">
+      <div class="comp-lbl">Fase 1 &mdash; Meses 1 a 6</div>
+      <div class="comp-val big">$10.000 / mes liquidos</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-lbl">Formato</div>
+      <div class="comp-val">Management Fee via contrato formal</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-lbl">Fase 2 &mdash; A partir do mes 7</div>
+      <div class="comp-val">Renegociacao por resultados</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-lbl">Participacao nos lucros</div>
+      <div class="comp-val">% por negocio operado, a definir</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-lbl">Protecao de saida</div>
+      <div class="comp-val">Clausula de indenizacao — contrato formal</div>
     </div>
   </div>
 </div>
 
-<!-- NEGOCIOS IDENTIFICADOS -->
+<!-- ═══════ NEXT STEPS ═══════ -->
 <div class="section">
-  <div class="sec-tag">Os primeiros negocios</div>
-  <div class="sec-title">2 LLCs ja identificadas, analisadas e validadas</div>
+  <div class="sec-tag">Para comecar</div>
+  <div class="sec-title">Proximos passos.</div>
   <div class="divider"></div>
-  <div class="sec-lead">Antes de apresentar esta proposta, realizamos uma analise aprofundada do mercado para identificar os primeiros negocios viaveis para a Holding. Dois foram validados com dados reais, pesquisa de mercado, analise regulatoria e modelo de negocio definido.</div>
 
-  <div class="card-grid">
-    <div class="card" style="border-top: 3px solid var(--orange);">
-      <div class="card-num" style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
-        <span style="background:var(--green); color:white; font-size:10px; font-weight:700; padding:3px 10px; border-radius:12px; font-family:'Sora',sans-serif;">VIAVEL</span>
-        LLC 01
-      </div>
-      <div class="card-title">Monitores LED &mdash; Distribuicao B2B</div>
-      <div class="card-body" style="margin-bottom:14px;">Mercado validado na Florida Central. Estrategia de atacadista para empresas instaladoras, integradores e sign companies. Capital disponivel para importar em volume — a vantagem que poucos concorrentes tem. Modelo com visao de fabrica propria em 3 anos.</div>
-      <div style="font-size:12px; color:var(--text-muted); border-top:0.5px solid var(--border); padding-top:10px;">
-        <span style="color:var(--green); font-weight:600;">&#10003;</span> Mercado educado e com demanda &nbsp;&middot;&nbsp;
-        <span style="color:var(--green); font-weight:600;">&#10003;</span> Modelo B2B validado &nbsp;&middot;&nbsp;
-        <span style="color:var(--green); font-weight:600;">&#10003;</span> Estrategia de entrada definida
-      </div>
-    </div>
-    <div class="card" style="border-top: 3px solid var(--orange);">
-      <div class="card-num" style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
-        <span style="background:var(--green); color:white; font-size:10px; font-weight:700; padding:3px 10px; border-radius:12px; font-family:'Sora',sans-serif;">VIAVEL</span>
-        LLC 02
-      </div>
-      <div class="card-title">Solar + EV Charging</div>
-      <div class="card-body" style="margin-bottom:14px;">Modelo behind-the-meter validado para a Florida. Expansao nacional via virtual net metering em mais de 40 estados. Oportunidade critica: incentivos fiscais de ate $100.000 por ponto de recarga expiram em 30 de junho de 2026.</div>
-      <div style="font-size:12px; color:var(--text-muted); border-top:0.5px solid var(--border); padding-top:10px;">
-        <span style="color:var(--green); font-weight:600;">&#10003;</span> Modelo regulatorio validado &nbsp;&middot;&nbsp;
-        <span style="color:var(--green); font-weight:600;">&#10003;</span> Incentivos fiscais confirmados &nbsp;&middot;&nbsp;
-        <span style="color:var(--gold); font-weight:600;">&#9888;</span> Urgencia: 30 jun
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-top:20px; background:var(--navy); border-radius:12px; padding:24px 28px; display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
-    <div style="flex:1; min-width:260px;">
-      <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:15px; color:var(--white); margin-bottom:6px;">Analise detalhada disponivel</div>
-      <div style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.65;">A analise completa de cada LLC — modelo de negocio, estrategia de entrada, analise competitiva, regulamentacao e incentivos fiscais — esta documentada em um segundo documento de suporte.</div>
-    </div>
-    <div style="flex-shrink:0; text-align:center;">
-      <a href="analise_negocios.html" target="_blank" style="display:inline-block; background:var(--orange); color:white; font-family:'Sora',sans-serif; font-weight:700; font-size:13px; padding:12px 24px; border-radius:10px; white-space:nowrap; text-decoration:none;">Ver Analise Detalhada &#8594;</a>
-      <div style="font-size:11px; color:rgba(255,255,255,0.3); margin-top:8px;">Documento de suporte desta proposta</div>
-    </div>
-  </div>
-</div>
-
-<!-- MINHA PROPOSTA -->
-<div class="section">
-  <div class="sec-tag">Minha Proposta</div>
-  <div class="sec-title">O que proponho: claro, justo e protegido para os dois lados</div>
-  <div class="divider"></div>
-  <div class="sec-lead">Nao quero comecar este relacionamento sem clareza sobre o meu papel e a minha compensacao. Isso protege voce e me protege. Negocios serios comecam com acordos claros.</div>
-
-  <div class="comp-card">
-    <div class="comp-header">
-      <div class="comp-title">Estrutura de Compensacao Proposta &mdash; COO</div>
-      <div class="comp-badge">Negociavel</div>
-    </div>
-    <div class="comp-row"><div class="comp-lbl">Fase 1: Meses 1 a 6 (estruturacao da Corp e arranque)</div><div class="comp-val accent">$10.000 / mes liquidos</div></div>
-    <div class="comp-row"><div class="comp-lbl">Formato de pagamento</div><div class="comp-val">Management Fee via contrato formal</div></div>
-    <div class="comp-row"><div class="comp-lbl">Fase 2: A partir do mes 7</div><div class="comp-val">Renegociacao baseada em resultados reais</div></div>
-    <div class="comp-row"><div class="comp-lbl">Participacao nos lucros</div><div class="comp-val">% a definir em contrato, por negocio operado</div></div>
-    <div class="comp-row"><div class="comp-lbl">Protecao de saida</div><div class="comp-val">Clausula de indenizacao por rescisao antecipada</div></div>
-  </div>
-
-  <div class="orange-box"><strong>Por que a protecao de saida importa para os dois lados:</strong> Ao longo dos primeiros 6 meses abrirei minha rede de contatos, construirei relacoes em nome da Corp e criarei estruturas que ficam com a empresa. Um contrato bem feito por advogado americano garante que este relacionamento seja tratado com seriedade — e que ambos saibam exatamente o que acontece em qualquer cenario.</div>
-
-  <div class="green-box">
-    <div class="box-title">O que voce recebe por este investimento</div>
-    <div class="box-body">Uma Holding Corp americana sendo estruturada do zero, com dois negocios prioritarios em andamento, um COO dedicado em tempo integral com cidadania americana, acesso a uma rede de contatos construida ao longo de anos, relatorios e acompanhamento constante. E a tranquilidade de saber que alguem comprometido esta cuidando do seu investimento aqui, enquanto voce cuida do Brasil — e prospecta os proximos investidores.</div>
-  </div>
-
-  <div class="next-band">
-    <div class="next-title">Proximos Passos</div>
-    <div class="next-sub">O que precisamos resolver nas proximas semanas para comecar com o pe direito.</div>
-    <div class="next-item"><div class="next-check">1</div><div class="next-text"><b>Alinhar o quadro societario da Corp:</b> percentuais de Juninho e Francisco, com apoio de contador e advogado americano.</div></div>
-    <div class="next-item"><div class="next-check">2</div><div class="next-text"><b>Formalizar o meu contrato como COO:</b> papel, compensacao, participacao nos lucros e protecoes — feito por advogado americano.</div></div>
-    <div class="next-item"><div class="next-check">3</div><div class="next-text"><b>Constituir a Holding Corp:</b> abertura da entidade, Board of Directors, contas bancarias e estrutura legal.</div></div>
-    <div class="next-item"><div class="next-check">4</div><div class="next-text"><b>Iniciar as instalacoes de EV Charging urgentemente:</b> antes de 30 de junho para garantir o credito fiscal de ate $100.000 por ponto.</div></div>
-    <div class="next-item"><div class="next-check">5</div><div class="next-text"><b>Construir o plano de negocios de 12 meses:</b> com budget, metas, roadmap e estrutura de captacao de investidores para cada LLC.</div></div>
+  <div class="steps-dark">
+    <div class="step-item"><div class="step-num">1</div><div class="step-text"><b>Formalizar o contrato do COO</b> — papel, compensacao, participacao nos lucros e protecoes. Feito por advogado americano.</div></div>
+    <div class="step-item"><div class="step-num">2</div><div class="step-text"><b>Alinhar o quadro societario da Holding Corp</b> — percentuais de Juninho e Francisco, com contador e advogado americano.</div></div>
+    <div class="step-item"><div class="step-num">3</div><div class="step-text"><b>Constituir a Holding Corp</b> — abertura da entidade, Board of Directors e contas bancarias.</div></div>
+    <div class="step-item"><div class="step-num">4</div><div class="step-text"><b>Construir o plano de negocios de 12 meses</b> — definir quais LLCs priorizar, estrutura de captacao de investidores, budget e roadmap de execucao.</div></div>
+    <div class="step-item"><div class="step-num">5</div><div class="step-text"><b>Estruturar e operacionalizar as primeiras LLCs</b> — seguindo o modelo aprovado pelo Board: captacao, constituicao e arranque de cada negocio.</div></div>
   </div>
 </div>
 
 <div class="footer">
   <p>Maruan Barakat &nbsp;&middot;&nbsp; COO Proposto &nbsp;&middot;&nbsp; Central Florida, USA &nbsp;&middot;&nbsp; Abril 2026</p>
-  <p style="margin-top:6px;">Confidencial &mdash; uso exclusivo dos socios do grupo</p>
+  <p style="margin-top:6px">Confidencial &mdash; uso exclusivo dos socios do grupo</p>
 </div>
 
 </div><!-- end page -->
